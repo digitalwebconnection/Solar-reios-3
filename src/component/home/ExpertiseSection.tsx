@@ -1,6 +1,6 @@
 import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
-
+import video from "../../assets/5.mp4"
 const expertisePoints = [
   "10+ Years of Proven Excellence in Solar EPC & Renewable Projects.",
   "Successfully Delivered Projects Across Residential, Commercial & Industrial Segments.",
@@ -28,7 +28,7 @@ const ExpertiseSection = () => {
             className="flex justify-center"
           >
             <video
-              src="https://www.servotech.in/blog/wp-content/uploads/2023/06/13-06-2023-Website-Map-Final.mp4" 
+              src={video} 
               autoPlay 
                 loop
                 muted
