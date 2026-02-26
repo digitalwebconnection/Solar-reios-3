@@ -15,7 +15,8 @@ const HeroHm = () => {
                 >
                     <source
                         src={video}
-                        type="video/mp4"
+                        type="video/mp4 "
+                        className=" bg-cover"
                     />
                 </video>
 

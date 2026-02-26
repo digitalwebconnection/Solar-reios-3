@@ -23,7 +23,6 @@ const SolarSolutions = () => {
 
             <div className="md:w-1/2">
              
-
               <h3 className="text-xl font-semibold mt-3 mb-2">
                 On-Grid Solar System
               </h3>
@@ -83,7 +82,6 @@ const SolarSolutions = () => {
 
             <div className="md:w-1/2">
               
-
               <h3 className="text-xl font-semibold mt-3 mb-2">
                 Ground mounted Solar System
               </h3>
