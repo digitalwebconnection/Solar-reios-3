@@ -3,7 +3,7 @@ import video from "../../assets/0_Solar_Panels_Solar_Energy_3840x2160.mp4"
 const HeroHm = () => {
     return (
         <>
-            <div className="relative w-full h-screen overflow-hidden">
+            <div className="relative mt-20 w-full h-screen overflow-hidden">
 
                 {/* Video */}
                 <video
