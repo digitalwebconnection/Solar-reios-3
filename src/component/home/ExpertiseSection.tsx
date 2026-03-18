@@ -14,10 +14,10 @@ const expertisePoints = [
 ];
 const ExpertiseSection = () => {
   return (
-    <section className="bg-white py-0">
+    <section className="bg-white ">
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
 
           {/* Left Side - Map */}
           <motion.div
@@ -28,12 +28,12 @@ const ExpertiseSection = () => {
             className="flex justify-center"
           >
             <video
-              src={video} 
-              autoPlay 
-                loop
-                muted
-                playsInline
-              className="w-full max-w-md object-contain"
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full max-w-sm object-contain"
             />
           </motion.div>
 
@@ -44,7 +44,7 @@ const ExpertiseSection = () => {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-8">
+            <h2 className="text-4xl font-bold mb-2">
               Our <span className="text-blue-700">Expertise</span>
             </h2>
 

@@ -26,34 +26,54 @@ const clients = [
 ];
 
 const ClientsSection = () => {
+ const allClients = [...clients, ...clients]; // duplicate for infinite scroll
+
   return (
-    <section className="bg-linear-to-b my-4 from-blue-900 to-blue-950 py-20">
+    <section className="bg-linear-to-b from-blue-900 to-blue-950 py-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <h2 className="text-center text-4xl font-bold text-white mb-14">
+        <h2 className="text-center  text-4xl font-bold text-white mb-8">
           Our Clients
         </h2>
 
-        {/* Logo Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6">
+        {/* Running Belt */}
+        <div className="relative w-full overflow-hidden">
+          <div className="flex animate-scroll gap-10">
 
-          {clients.map((client, index) => (
-            <div
-              key={index}
-              className="bg-transparent border border-white/50 rounded-lg flex items-center justify-center p-2 h-28 transition hover:bg-white/10"
-            >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="h-full object-contain"
-              />
-            </div>
-          ))}
+            {allClients.map((client, index) => (
+              <div
+                key={index}
+                className=" border bg-white border-white/40 rounded-lg flex items-center justify-center  min-w-40 h-28"
+              >
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="h-full object-contain"
+                />
+              </div>
+            ))}
 
+          </div>
         </div>
 
       </div>
+
+      {/* Animation Style */}
+      <style>{`
+        .animate-scroll {
+          animation: scroll 10s linear infinite;
+        }
+
+        @keyframes scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 };
