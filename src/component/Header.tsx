@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { 
-  ChevronDown, 
-  Menu, 
-  X, 
+import {
+  ChevronDown,
+  Menu,
+  X,
   Phone,
-  Facebook, 
-  Twitter, 
-  Linkedin, 
+  Facebook,
+  Twitter,
+  Linkedin,
   Instagram,
   Zap,
   TrendingUp
@@ -36,14 +36,14 @@ const Header = () => {
   const navLinks = [
     { title: "About Us", path: "/about" },
     { title: "Products", path: "/products" },
-    { 
-      title: "Solutions", 
-      path: "#", 
+    {
+      title: "Solutions",
+      path: "#",
       dropdown: [
         { title: "Solar EPC", path: "/solutions/solar-epc" },
         { title: "Solar Calculator", path: "/solutions/solar-calculator" },
         { title: "EV Calculator", path: "/solutions/ev-calculator" },
-      ] 
+      ]
     },
     { title: "Careers", path: "/careers" },
     { title: "Blogs", path: "/blogs" },
@@ -60,14 +60,14 @@ const Header = () => {
       <div className="bg-slate-900 text-white text-[10px] py-2 px-4 md:px-8 hidden md:block border-b border-white/5 uppercase tracking-widest font-black">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6 overflow-hidden">
-             {stockTicker.map((item, idx) => (
-               <div key={idx} className="flex items-center gap-3 border-r border-white/10 pr-6">
-                 <span className="text-slate-400">{item.label}</span>
-                 <span className="font-black">{item.value}</span>
-                 <span className={item.up ? "text-green-400" : "text-red-400"}>{item.change}</span>
-                 <TrendingUp size={10} className="text-green-400" />
-               </div>
-             ))}
+            {stockTicker.map((item, idx) => (
+              <div key={idx} className="flex items-center gap-3 border-r border-white/10 pr-6">
+                <span className="text-slate-400">{item.label}</span>
+                <span className="font-black">{item.value}</span>
+                <span className={item.up ? "text-green-400" : "text-red-400"}>{item.change}</span>
+                <TrendingUp size={10} className="text-green-400" />
+              </div>
+            ))}
           </div>
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2 hover:text-blue-400 transition-colors cursor-pointer">
@@ -84,10 +84,9 @@ const Header = () => {
       </div>
 
       {/* Main Navbar */}
-      <nav 
-        className={`transition-all duration-500 py-4 px-4 md:px-8 ${
-          isScrolled ? "bg-white/95 backdrop-blur-md shadow-2xl py-3 border-b border-slate-100" : "bg-white py-5"
-        }`}
+      <nav
+        className={`transition-all duration-500 py-4 px-4 md:px-8 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-2xl py-3 border-b border-slate-100" : "bg-white py-5"
+          }`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
@@ -111,12 +110,11 @@ const Header = () => {
                     <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                       <div className="bg-white shadow-2xl rounded-3xl border border-slate-100 w-64 py-4 overflow-hidden">
                         {link.dropdown.map((sub, sidx) => (
-                          <Link 
-                            key={sidx} 
+                          <Link
+                            key={sidx}
                             to={sub.path}
-                            className={`block px-8 py-4 hover:bg-slate-50 hover:text-blue-600 transition-colors font-bold normal-case text-sm ${
-                              location.pathname === sub.path ? "text-blue-600 bg-blue-50" : "text-slate-600"
-                            }`}
+                            className={`block px-8 py-4 hover:bg-slate-50 hover:text-blue-600 transition-colors font-bold normal-case text-sm ${location.pathname === sub.path ? "text-blue-600 bg-blue-50" : "text-slate-600"
+                              }`}
                           >
                             {sub.title}
                           </Link>
@@ -125,21 +123,20 @@ const Header = () => {
                     </div>
                   </div>
                 ) : (
-                  <Link 
+                  <Link
                     to={link.path}
-                    className={`py-2 transition-all relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-blue-600 after:transition-all ${
-                      location.pathname === link.path 
-                        ? "text-blue-600 after:w-full" 
+                    className={`py-2 transition-all relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-blue-600 after:transition-all ${location.pathname === link.path
+                        ? "text-blue-600 after:w-full"
                         : "hover:text-blue-600 after:w-0 hover:after:w-full"
-                    }`}
+                      }`}
                   >
                     {link.title}
                   </Link>
                 )}
               </li>
             ))}
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="bg-blue-600 text-white px-10 py-4 rounded-2xl hover:bg-slate-900 transition-all shadow-xl shadow-blue-200 active:scale-95 text-[11px] font-black uppercase tracking-widest"
             >
               Get Free Quote
@@ -147,7 +144,7 @@ const Header = () => {
           </ul>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="lg:hidden text-slate-900 p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -173,7 +170,7 @@ const Header = () => {
                 </div>
                 <span className="font-heading font-black text-xl text-slate-900">SOLARREIOS</span>
               </Link>
-              <button 
+              <button
                 onClick={() => setIsMenuOpen(false)}
                 className="p-3 bg-slate-50 rounded-2xl text-slate-900"
               >
@@ -187,7 +184,7 @@ const Header = () => {
                   <li key={idx}>
                     {link.dropdown ? (
                       <div>
-                        <button 
+                        <button
                           onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
                           className="flex items-center justify-between w-full"
                         >
@@ -195,7 +192,7 @@ const Header = () => {
                         </button>
                         <AnimatePresence>
                           {isSolutionsOpen && (
-                            <motion.ul 
+                            <motion.ul
                               initial={{ height: 0, opacity: 0 }}
                               animate={{ height: "auto", opacity: 1 }}
                               exit={{ height: 0, opacity: 0 }}
@@ -204,8 +201,8 @@ const Header = () => {
                               <li className="pt-6"></li>
                               {link.dropdown.map((sub, sidx) => (
                                 <li key={sidx}>
-                                  <Link 
-                                    to={sub.path} 
+                                  <Link
+                                    to={sub.path}
                                     onClick={() => setIsMenuOpen(false)}
                                     className="text-lg text-slate-500 font-bold normal-case block"
                                   >
@@ -229,8 +226,8 @@ const Header = () => {
             </nav>
 
             <div className="mt-auto pt-8 border-t border-slate-100 flex flex-col gap-6">
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 onClick={() => setIsMenuOpen(false)}
                 className="bg-blue-600 text-white text-center py-5 rounded-3xl font-black text-xl shadow-2xl shadow-blue-300"
               >
