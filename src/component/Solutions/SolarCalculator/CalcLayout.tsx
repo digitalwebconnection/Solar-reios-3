@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { IndianRupee, Sun, MapPin, Maximize2, TrendingDown, Leaf, Calendar, Calculator, ShieldCheck, Zap, Info, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { IndianRupee, MapPin, Maximize2, Leaf, Calendar, Calculator, ShieldCheck, Info, ArrowRight } from "lucide-react";
 import savingImage from "../../../assets/saving-removebg-preview.png";
 
 const states = [

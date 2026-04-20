@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Cpu, MessageSquare } from "lucide-react";
 

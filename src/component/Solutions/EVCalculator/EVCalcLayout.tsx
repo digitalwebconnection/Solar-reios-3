@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Fuel, Leaf, TrendingUp, Navigation, BatteryCharging, ArrowRight, IndianRupee, Zap, Info } from "lucide-react";
+import { motion } from "framer-motion";
+import { Fuel, Leaf, TrendingUp, Navigation, ArrowRight, Zap } from "lucide-react";
 
 const EVCalcLayout = () => {
   const [distance, setDistance] = useState(50);

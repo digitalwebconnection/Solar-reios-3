@@ -1,15 +1,136 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./component/Layout";
-import Home from "./pages/Home";
-import AboutUs from "./pages/AboutUs";
-import Products from "./pages/Products";
-import SolarEPC from "./pages/solutions/SolarEPC";
-import SolarCalculator from "./pages/solutions/SolarCalculator";
-import EVCalculator from "./pages/solutions/EVCalculator";
-import Careers from "./pages/Careers";
-import Blogs from "./pages/Blogs";
-import ContactUs from "./pages/ContactUs";
+import { useState } from "react";
 import "./App.css";
+
+// Layout & Home
+import Layout from "./component/Layout";
+import Home from "./component/home/Homemain";
+
+// About Us
+import AboutHero from "./component/AboutUs/AboutHero";
+import CompanyStory from "./component/AboutUs/CompanyStory";
+import LeadershipGrid from "./component/AboutUs/LeadershipGrid";
+import AwardsSection from "./component/AboutUs/AwardsSection";
+import TestimonialsSection from "./component/AboutUs/TestimonialsSection";
+
+// Products
+import ProductsHero from "./component/Products/ProductsHero";
+import ProductFilter from "./component/Products/ProductFilter";
+import ProductGrid from "./component/Products/ProductGrid";
+import ProductCTA from "./component/Products/ProductCTA";
+
+// Solutions - Solar EPC
+import SolarEPCHero from "./component/Solutions/SolarEPC/SolarEPCHero";
+import EPCServices from "./component/Solutions/SolarEPC/EPCServices";
+import EPCProcess from "./component/Solutions/SolarEPC/EPCProcess";
+import ProjectTypes from "./component/Solutions/SolarEPC/ProjectTypes";
+
+// Solutions - Calculators
+import SolarCalculator from "./component/home/SolarCalculator";
+import EVHero from "./component/Solutions/EVCalculator/EVHero";
+import EVCalcLayout from "./component/Solutions/EVCalculator/EVCalcLayout";
+
+// Careers
+import CareersHero from "./component/Careers/CareersHero";
+import LifeAtCompany from "./component/Careers/LifeAtCompany";
+import BenefitsSection from "./component/Careers/BenefitsSection";
+import JobBoard from "./component/Careers/JobBoard";
+import AppForm from "./component/Careers/AppForm";
+
+// Blogs
+import BlogHero from "./component/Blogs/BlogHero";
+import BlogFilter from "./component/Blogs/BlogFilter";
+import BlogGrid from "./component/Blogs/BlogGrid";
+
+// Contact Us
+import ContactHero from "./component/ContactUs/ContactHero";
+import ContactForm from "./component/ContactUs/ContactForm";
+import OfficeDetails from "./component/ContactUs/OfficeDetails";
+import MapSection from "./component/ContactUs/MapSection";
+import QuickActions from "./component/ContactUs/QuickActions";
+
+// --- Local Page Aggregators ---
+
+const AboutUs = () => (
+  <>
+    <AboutHero />
+    <CompanyStory />
+    <LeadershipGrid />
+    <AwardsSection />
+    <TestimonialsSection />
+  </>
+);
+
+const Products = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const categories = ["All", "Solar Panels", "Inverters", "Batteries", "EV Chargers"];
+  
+  return (
+    <>
+      <ProductsHero />
+      <ProductFilter 
+        categories={categories} 
+        activeCategory={activeCategory} 
+        setActiveCategory={setActiveCategory} 
+      />
+      <ProductGrid products={[]} /> {/* Passes empty array for now */}
+      <ProductCTA />
+    </>
+  );
+};
+
+const SolarEPC = () => (
+  <>
+    <SolarEPCHero />
+    <EPCServices />
+    <EPCProcess />
+    <ProjectTypes />
+  </>
+);
+
+const EVCalculator = () => (
+  <>
+    <EVHero />
+    <EVCalcLayout />
+  </>
+);
+
+const Careers = () => (
+  <>
+    <CareersHero />
+    <LifeAtCompany />
+    <BenefitsSection />
+    <JobBoard />
+    <AppForm />
+  </>
+);
+
+const Blogs = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const categories = ["All", "Solar", "Energy", "Tech", "News"];
+
+  return (
+    <>
+      <BlogHero />
+      <BlogFilter 
+        categories={categories}
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
+      />
+      <BlogGrid posts={[]} setActiveCategory={setActiveCategory} />
+    </>
+  );
+};
+
+const ContactUs = () => (
+  <>
+    <ContactHero />
+    <ContactForm />
+    <OfficeDetails />
+    <MapSection />
+    <QuickActions />
+  </>
+);
 
 function App() {
   return (

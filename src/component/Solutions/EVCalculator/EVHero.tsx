@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { BatteryCharging } from "lucide-react";
 import evVideo from "../../../assets/offGrid.mp4";
 
 const EVHero = () => {

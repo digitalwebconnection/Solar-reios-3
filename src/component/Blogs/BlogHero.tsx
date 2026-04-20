@@ -1,12 +1,20 @@
 import { motion } from "framer-motion";
 import { Bookmark } from "lucide-react";
+import blogVideo from "../../assets/5.mp4";
 
 const BlogHero = () => {
   return (
     <section className="bg-slate-900 pt-32 pb-20 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-         <Bookmark size={400} className="text-white absolute -top-20 -right-20" />
-      </div>
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={blogVideo} type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-white/50 backdrop-blur-[2px]"></div>
       <div className="max-w-7xl mx-auto text-center relative z-10">
            <motion.div
              initial={{ opacity: 0, y: -20 }}
@@ -18,11 +26,11 @@ const BlogHero = () => {
            <motion.h1 
              initial={{ opacity: 0 }}
              animate={{ opacity: 1 }}
-             className="text-4xl md:text-6xl font-heading font-black text-white mb-6 uppercase tracking-tight"
+             className="text-4xl md:text-7xl font-heading font-black text-slate-900 mb-6 uppercase tracking-tighter"
            >
-             Insights & <span className="text-blue-400">Updates</span>
+             Insights & <span className="text-blue-600">Updates</span>
            </motion.h1>
-           <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light">
+           <p className="text-slate-600 max-w-2xl mx-auto text-sm font-black uppercase tracking-[0.3em]">
              Stay informed about the latest trends in Solar Energy, EV charging infrastructure, 
              and government policies in India.
            </p>

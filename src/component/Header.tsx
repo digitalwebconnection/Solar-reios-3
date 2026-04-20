@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { 
@@ -10,8 +9,8 @@ import {
   Twitter, 
   Linkedin, 
   Instagram,
-  TrendingUp,
-  Zap
+  Zap,
+  TrendingUp
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -20,14 +19,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const location = useLocation();
-=======
-import { useEffect, useState } from "react";
-import { ChevronDown, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-import logo from "../assets/logo.png";
-
-const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
->>>>>>> 06b67df3eb792ae1d6b2b25c5e70d5466a1339d5
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +28,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-<<<<<<< HEAD
   useEffect(() => {
     setIsMenuOpen(false);
     setIsSolutionsOpen(false);
@@ -66,8 +56,8 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50">
-      {/* Stock Ticker Bar */}
-      <div className="bg-slate-900 text-white text-[10px] py-1 px-4 md:px-8 hidden md:block border-b border-white/5 uppercase tracking-widest font-black">
+      {/* Top Bar / Stock Ticker */}
+      <div className="bg-slate-900 text-white text-[10px] py-2 px-4 md:px-8 hidden md:block border-b border-white/5 uppercase tracking-widest font-black">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6 overflow-hidden">
              {stockTicker.map((item, idx) => (
@@ -80,69 +70,23 @@ const Header = () => {
              ))}
           </div>
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 hover:text-blue-400 transition-colors cursor-pointer">
               <Phone size={12} className="text-blue-500" />
               <span>+91-11-4118 3116</span>
             </div>
-            <div className="flex items-center gap-4 border-l border-white/10 pl-6">
+            <div className="flex items-center gap-4 border-l border-white/10 pl-6 text-slate-400">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
                 <a key={i} href="#" className="hover:text-blue-400 transition-colors"><Icon size={12} /></a>
               ))}
             </div>
-=======
-  return (
-    <header
-      className={`w-full fixed top-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/80  backdrop-blur-md shadow-md"
-          : "bg-white"
-      }`}
-    >
-      {/* Top Bar */}
-      <div className="bg-gray-100 text-sm text-gray-700 border-b">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-2">
-
-          {/* Social Icons */}
-          <div className="flex items-center gap-3">
-            {[Facebook, Twitter, Linkedin, Instagram].map((Icon, index) => (
-              <a
-                key={index}
-                href="#"
-                className="p-2 rounded-full transition-all duration-300 hover:bg-blue-600 hover:text-white hover:scale-110"
-              >
-                <Icon size={14} />
-              </a>
-            ))}
-          </div>
-
-          {/* Contact Info */}
-          <div className="hidden md:flex items-center gap-6 text-xs">
-
-            <div className="flex items-center gap-2 hover:text-blue-600 transition">
-              <Phone size={14} />
-              <span>+91 98765 43210</span>
-            </div>
-
-            <div className="flex items-center gap-2 hover:text-blue-600 transition">
-              <Mail size={14} />
-              <span>info@solarreios.com</span>
-            </div>
-
-            <div className="flex items-center gap-2 hover:text-blue-600 transition">
-              <MapPin size={14} />
-              <span>Ahmedabad, India</span>
-            </div>
-
->>>>>>> 06b67df3eb792ae1d6b2b25c5e70d5466a1339d5
           </div>
         </div>
       </div>
 
       {/* Main Navbar */}
-<<<<<<< HEAD
       <nav 
         className={`transition-all duration-500 py-4 px-4 md:px-8 ${
-          isScrolled ? "bg-white/90 backdrop-blur-md shadow-2xl py-3" : "bg-white py-5"
+          isScrolled ? "bg-white/95 backdrop-blur-md shadow-2xl py-3 border-b border-slate-100" : "bg-white py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -158,11 +102,11 @@ const Header = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <ul className="hidden lg:flex items-center gap-8 font-heading text-[13px] font-black uppercase tracking-widest text-slate-900">
+          <ul className="hidden lg:flex items-center gap-8 font-heading text-[11px] font-black uppercase tracking-[0.2em] text-slate-900">
             {navLinks.map((link, idx) => (
               <li key={idx} className="relative group">
                 {link.dropdown ? (
-                  <div className="flex items-center gap-1 cursor-pointer py-2 hover:text-blue-600 transition-colors">
+                  <div className="flex items-center gap-1 cursor-pointer py-2 hover:text-blue-600 transition-colors group">
                     {link.title} <ChevronDown size={14} className="group-hover:rotate-180 transition-transform" />
                     <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                       <div className="bg-white shadow-2xl rounded-3xl border border-slate-100 w-64 py-4 overflow-hidden">
@@ -196,7 +140,7 @@ const Header = () => {
             ))}
             <Link 
               to="/contact" 
-              className="bg-blue-600 text-white px-8 py-4 rounded-2xl hover:bg-slate-900 transition-all shadow-xl shadow-blue-200 active:scale-95"
+              className="bg-blue-600 text-white px-10 py-4 rounded-2xl hover:bg-slate-900 transition-all shadow-xl shadow-blue-200 active:scale-95 text-[11px] font-black uppercase tracking-widest"
             >
               Get Free Quote
             </Link>
@@ -299,56 +243,6 @@ const Header = () => {
           </motion.div>
         )}
       </AnimatePresence>
-=======
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 transition-all duration-300">
-
-        {/* Logo */}
-        <div className="flex items-center transform hover:scale-105 transition duration-300">
-          <img src={logo} alt="Logo" className="h-12 object-contain" />
-        </div>
-
-        {/* Navigation */}
-        <nav className="hidden lg:flex items-center gap-8 font-medium">
-
-          {["About Us", "Products", "Solutions", "Media"].map((item, i) => (
-            <div
-              key={i}
-              className="relative group cursor-pointer flex items-center gap-1"
-            >
-              <span className="transition duration-300 group-hover:text-blue-600">
-                {item}
-              </span>
-              <ChevronDown
-                size={16}
-                className="transition-transform duration-300 group-hover:rotate-180"
-              />
-
-              {/* Animated underline */}
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-            </div>
-          ))}
-
-          {["Investors", "Careers", "Contact"].map((item, i) => (
-            <div
-              key={i}
-              className="relative group cursor-pointer"
-            >
-              <span className="transition duration-300 group-hover:text-blue-600">
-                {item}
-              </span>
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-            </div>
-          ))}
-
-          {/* Animated Button */}
-          <button className="relative overflow-hidden bg-black text-white px-6 py-2 rounded-md transition-all duration-300 hover:shadow-lg hover:scale-105">
-            <span className="relative z-10">Shop Now</span>
-            <span className="absolute inset-0 bg-blue-600 translate-y-full hover:translate-y-0 transition-all duration-300"></span>
-          </button>
-
-        </nav>
-      </div>
->>>>>>> 06b67df3eb792ae1d6b2b25c5e70d5466a1339d5
     </header>
   );
 };

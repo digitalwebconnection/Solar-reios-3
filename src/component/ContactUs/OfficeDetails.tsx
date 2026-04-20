@@ -9,27 +9,27 @@ const OfficeDetails = () => {
   return (
     <div className="space-y-12">
        {/* HQ */}
-       <div className="p-10 bg-slate-900 rounded-[40px] text-white shadow-2xl relative overflow-hidden border border-white/5">
-          <MapPin className="absolute top-10 right-10 opacity-5" size={100} />
-          <h4 className="text-blue-400 font-black uppercase tracking-widest text-xs mb-6">Registered Office</h4>
+       <div className="p-10 bg-white rounded-[40px] text-slate-900 shadow-2xl relative overflow-hidden border border-slate-100">
+          <MapPin className="absolute top-10 right-10 opacity-[0.03]" size={100} />
+          <h4 className="text-blue-600 font-black uppercase tracking-widest text-[10px] mb-6">Registered Office</h4>
           <div className="space-y-6">
             <div className="flex gap-4">
                <MapPin className="text-blue-600 shrink-0" size={24} />
-               <p className="text-slate-400 leading-relaxed font-medium">
+               <p className="text-slate-500 leading-relaxed font-medium text-sm">
                  802, 8th Floor, Crown Heights, Sector 10, Rohini, New Delhi, Delhi 110085
                </p>
             </div>
             <div className="flex gap-4">
                <Phone className="text-blue-600 shrink-0" size={24} />
-               <p className="text-lg font-black">+91-11-4118 3116 / 4118 3117</p>
+               <p className="text-lg font-black text-slate-900 tracking-tight">+91-11-4118 3116 / 4118 3117</p>
             </div>
             <div className="flex gap-4">
                <Mail className="text-blue-600 shrink-0" size={24} />
-               <p className="text-lg font-black">info@solarreios.com</p>
+               <p className="text-lg font-black text-slate-900 tracking-tight">info@solarreios.com</p>
             </div>
-            <div className="flex gap-4 border-t border-white/5 pt-6">
-               <Clock className="text-blue-400 shrink-0" size={24} />
-               <p className="text-slate-500 font-bold uppercase tracking-widest text-[10px]">Mon–Sat, 9:00 AM – 6:00 PM</p>
+            <div className="flex gap-4 border-t border-slate-100 pt-6">
+               <Clock className="text-blue-500 shrink-0" size={24} />
+               <p className="text-slate-400 font-black uppercase tracking-widest text-[10px]">Mon–Sat, 9:00 AM – 6:00 PM</p>
             </div>
           </div>
        </div>
