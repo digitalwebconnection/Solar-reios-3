@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./component/Layout";
 import Home from "./pages/Home";
@@ -32,3 +33,22 @@ function App() {
 }
 
 export default App;
+=======
+import './App.css'
+import Footer from './component/Footer'
+import Header from './component/Header'
+import Homemain from './component/home/Homemain'
+
+function App() {
+
+  return (
+    <>
+     <Header/>
+     <Homemain/>
+     <Footer/>
+    </>
+  )
+}
+
+export default App
+>>>>>>> 06b67df3eb792ae1d6b2b25c5e70d5466a1339d5
