@@ -125,10 +125,16 @@ const Blogs = () => {
 const ContactUs = () => (
   <>
     <ContactHero />
-    <ContactForm />
-    <OfficeDetails />
-    <MapSection />
     <QuickActions />
+    <section className="bg-slate-50/50 py-24">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <OfficeDetails />
+          <ContactForm />
+        </div>
+      </div>
+    </section>
+    <MapSection />
   </>
 );
 
