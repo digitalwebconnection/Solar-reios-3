@@ -15,11 +15,11 @@ const LeadershipGrid = () => {
   };
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
-          <p className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2">The Minds Behind SolarReios</p>
-          <h2 className="text-4xl font-heading font-black text-slate-900">Meet Our Leaders</h2>
+          <p className="text-blue-600 font-black uppercase tracking-widest text-[10px] mb-2">Our Visionaries</p>
+          <h2 className="text-4xl font-heading font-black text-slate-900 uppercase tracking-tight">Meet Our Leaders</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-12">
@@ -28,14 +28,14 @@ const LeadershipGrid = () => {
               key={idx}
               {...fadeIn}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white p-8 rounded-[40px] shadow-xl shadow-slate-200/60 text-center group hover:bg-slate-900 transition-colors duration-500 border border-slate-100"
+              className="bg-white p-8 rounded-[40px] shadow-xl shadow-slate-200/40 text-center border border-slate-100 hover:border-blue-600 transition-all duration-300"
             >
-              <div className="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden border-4 border-blue-600 p-1 group-hover:border-white transition-colors">
+              <div className="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden border-4 border-slate-100 p-1 group-hover:border-blue-600 transition-colors">
                 <img src={leader.img} className="w-full h-full object-cover rounded-full" alt={leader.name} />
               </div>
-              <h4 className="text-2xl font-heading font-bold text-slate-900 group-hover:text-white mb-1 transition-colors">{leader.name}</h4>
-              <p className="text-blue-600 font-bold text-sm mb-4 uppercase tracking-wider group-hover:text-blue-400">{leader.role}</p>
-              <p className="text-slate-500 group-hover:text-slate-400 text-sm italic transition-colors">"{leader.bio}"</p>
+              <h4 className="text-2xl font-heading font-black text-slate-900 mb-1">{leader.name}</h4>
+              <p className="text-blue-600 font-black text-[10px] mb-4 uppercase tracking-widest">{leader.role}</p>
+              <p className="text-slate-500 text-sm font-medium italic leading-relaxed">"{leader.bio}"</p>
             </motion.div>
           ))}
         </div>

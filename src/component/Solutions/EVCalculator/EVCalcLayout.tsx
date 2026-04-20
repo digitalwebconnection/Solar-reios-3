@@ -88,27 +88,27 @@ const EVCalcLayout = () => {
         <div className="lg:col-span-8 space-y-6">
            <motion.div 
              {...fadeIn}
-             className="bg-slate-900 rounded-[40px] shadow-2xl p-10 text-white relative overflow-hidden"
+             className="bg-white rounded-[40px] shadow-2xl p-10 text-slate-900 relative overflow-hidden border border-slate-100"
            >
-              <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
-                 <TrendingUp size={400} className="absolute -top-20 -right-20 text-white" />
+              <div className="absolute top-0 right-0 w-full h-full opacity-[0.03] pointer-events-none">
+                 <TrendingUp size={400} className="absolute -top-20 -right-20 text-slate-900" />
               </div>
               <div className="relative z-10">
-                <p className="text-blue-400 font-black uppercase tracking-widest text-xs mb-8">Estimated Annual Savings</p>
-                <h2 className="text-6xl md:text-8xl font-black text-white mb-10">₹{Math.round(yearlySavings).toLocaleString()}</h2>
+                <p className="text-blue-600 font-black uppercase tracking-widest text-[10px] mb-8">Estimated Annual Savings</p>
+                <h2 className="text-6xl md:text-8xl font-black text-slate-900 mb-10">₹{Math.round(yearlySavings).toLocaleString()}</h2>
                 
                 <div className="grid md:grid-cols-2 gap-6">
-                   <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 group hover:bg-white/10 transition-colors">
-                      <div className="flex items-center gap-2 text-slate-400 font-black text-[10px] uppercase tracking-widest mb-2">
-                        <Fuel size={14} className="text-slate-400" /> Petrol Cost / Month
+                   <div className="bg-slate-50 p-8 rounded-[32px] border border-slate-100 shadow-inner group hover:bg-white transition-colors">
+                      <div className="flex items-center gap-2 text-slate-400 font-black text-[10px] uppercase tracking-widest mb-4">
+                        <Fuel size={14} className="text-slate-300" /> Petrol Cost / Month
                       </div>
-                      <h4 className="text-3xl font-black text-slate-400 group-hover:text-white transition-colors">₹{Math.round(fuelCostPerDay * 30).toLocaleString()}</h4>
+                      <h4 className="text-4xl font-black text-slate-400">₹{Math.round(fuelCostPerDay * 30).toLocaleString()}</h4>
                    </div>
-                   <div className="bg-blue-600 p-8 rounded-3xl shadow-xl group hover:scale-105 transition-transform">
-                      <div className="flex items-center gap-2 text-blue-100 font-black text-[10px] uppercase tracking-widest mb-2">
+                   <div className="bg-blue-600 p-8 rounded-[32px] shadow-xl hover:scale-105 transition-transform">
+                      <div className="flex items-center gap-2 text-white font-black text-[10px] uppercase tracking-widest mb-4 opacity-70">
                         <Zap size={14} className="text-white" /> EV Cost / Month
                       </div>
-                      <h4 className="text-3xl font-black text-white">₹{Math.round(evCostPerDay * 30).toLocaleString()}</h4>
+                      <h4 className="text-4xl font-black text-white">₹{Math.round(evCostPerDay * 30).toLocaleString()}</h4>
                    </div>
                 </div>
               </div>

@@ -19,11 +19,11 @@ const EPCProcess = () => {
   };
 
   return (
-    <section className="py-24 bg-slate-900 text-white">
+    <section className="py-24 bg-white border-t border-slate-50">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
-          <p className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-2">Our Execution Workflow</p>
-          <h2 className="text-4xl font-heading font-black">Our EPC Process</h2>
+          <p className="text-blue-600 font-black uppercase tracking-widest text-[10px] mb-2">Our Execution Workflow</p>
+          <h2 className="text-4xl font-heading font-black text-slate-900 uppercase tracking-tight">Our EPC Process</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -32,13 +32,13 @@ const EPCProcess = () => {
               key={idx}
               {...fadeIn}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white/5 backdrop-blur-md p-10 rounded-[32px] border border-white/10 group hover:bg-white/10 transition-all hover:-translate-y-2"
+              className="bg-slate-50 p-10 rounded-[40px] border border-slate-100 group hover:border-blue-600 transition-all hover:-translate-y-2 shadow-sm"
             >
               <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl mb-8 group-hover:scale-110 transition-transform">
                 {step.icon}
               </div>
-              <h4 className="text-xl font-bold font-heading mb-4">Step {idx + 1}: {step.title}</h4>
-              <p className="text-slate-400 leading-relaxed text-sm font-medium">{step.desc}</p>
+              <h4 className="text-xl font-black font-heading mb-4 text-slate-900 uppercase tracking-tight">Step {idx + 1}: {step.title}</h4>
+              <p className="text-slate-500 leading-relaxed text-sm font-medium">{step.desc}</p>
             </motion.div>
           ))}
         </div>

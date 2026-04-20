@@ -109,25 +109,25 @@ const CalcLayout = () => {
         <div className="lg:col-span-8 space-y-6">
            <motion.div 
              {...fadeIn}
-             className="bg-linear-to-br from-blue-600 to-blue-800 rounded-[40px] shadow-2xl p-10 text-white relative overflow-hidden"
+             className="bg-white rounded-[40px] shadow-2xl p-10 text-slate-900 relative overflow-hidden border border-slate-100"
            >
-              <img src={savingImage} alt="Saving" className="absolute right-0 -top-10 opacity-10 w-96 h-96 pointer-events-none" />
+              <img src={savingImage} alt="Saving" className="absolute right-0 -top-10 opacity-5 w-96 h-96 pointer-events-none" />
               <div className="relative z-10">
-                <div className="flex items-center gap-2 text-blue-100 font-black uppercase tracking-widest text-xs mb-8">
+                <div className="flex items-center gap-2 text-blue-600 font-black uppercase tracking-widest text-[10px] mb-8">
                   <ShieldCheck size={16} /> Verified Estimate
                 </div>
                 
-                <p className="text-blue-100 font-bold uppercase tracking-widest text-xs mb-2">Recommended Capacity</p>
-                <h2 className="text-6xl md:text-8xl font-black mb-10">{systemSize} <span className="text-2xl opacity-50">kW</span></h2>
+                <p className="text-slate-400 font-black uppercase tracking-widest text-[10px] mb-2">Recommended Capacity</p>
+                <h2 className="text-6xl md:text-8xl font-black mb-10 text-slate-900">{systemSize} <span className="text-2xl opacity-20">kW</span></h2>
                 
                 <div className="grid md:grid-cols-2 gap-6">
-                   <div className="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20">
-                      <p className="text-blue-100 text-[10px] font-black uppercase mb-1">Annual Savings</p>
-                      <h4 className="text-3xl font-black text-orange-300">₹{annualSavings.toLocaleString()}</h4>
+                   <div className="bg-slate-50 p-8 rounded-[32px] border border-slate-100 shadow-inner">
+                      <p className="text-slate-400 text-[10px] font-black uppercase mb-2">Annual Savings</p>
+                      <h4 className="text-4xl font-black text-blue-600">₹{annualSavings.toLocaleString()}</h4>
                    </div>
-                   <div className="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20">
-                      <p className="text-blue-100 text-[10px] font-black uppercase mb-1">Investment (Approx)</p>
-                      <h4 className="text-3xl font-black">₹{(cost/100000).toFixed(2)} L*</h4>
+                   <div className="bg-slate-50 p-8 rounded-[32px] border border-slate-100 shadow-inner">
+                      <p className="text-slate-400 text-[10px] font-black uppercase mb-2">Investment (Approx)</p>
+                      <h4 className="text-4xl font-black text-slate-900">₹{(cost/100000).toFixed(2)} L*</h4>
                    </div>
                 </div>
               </div>
