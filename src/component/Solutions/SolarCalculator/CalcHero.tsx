@@ -1,19 +1,13 @@
 import { motion } from "framer-motion";
-import calcVideo from "../../../assets/5.mp4";
 
 const CalcHero = () => {
   return (
-    <section className="relative h-[400px] flex items-center justify-center text-center overflow-hidden bg-slate-900 px-4">
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+    <section className="relative h-150 flex items-center justify-center text-center overflow-hidden bg-slate-900 px-4">
+      <div 
+        className="absolute inset-0 w-full h-full object-cover bg-blue-500"
       >
-        <source src={calcVideo} type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 bg-white/50 backdrop-blur-[2px]"></div>
+      </div>
+      <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]"></div>
       <div className="relative z-10">
         <motion.h1 
           initial={{ opacity: 0, scale: 0.9 }}

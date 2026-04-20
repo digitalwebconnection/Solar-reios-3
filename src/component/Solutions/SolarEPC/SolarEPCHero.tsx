@@ -1,21 +1,15 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import epcVideo from "../../../assets/ongrid.mp4";
 
 const SolarEPCHero = () => {
   return (
-    <section className="relative h-[450px] flex items-center overflow-hidden">
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+    <section className="relative h-150 flex items-center justify-center overflow-hidden">
+      <div 
+        className="absolute inset-0 w-full h-full object-cover bg-blue-500"
       >
-        <source src={epcVideo} type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px]"></div>
+      </div>
+      <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]"></div>
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 text-center md:text-left">
         <motion.div
           initial={{ opacity: 0, x: -50 }}

@@ -1,20 +1,14 @@
 import { motion } from "framer-motion";
-import contactVideo from "../../assets/offGrid.mp4";
 
 const ContactHero = () => {
   return (
-    <section className="bg-slate-900 pt-32 pb-20 px-4 relative overflow-hidden">
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+    <section className="relative h-150 flex items-center justify-center text-center overflow-hidden bg-slate-900 px-4">
+      <div 
+        className="absolute inset-0 w-full h-full object-cover bg-blue-500"
       >
-        <source src={contactVideo} type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 bg-white/50 backdrop-blur-[2px]"></div>
-      <div className="max-w-7xl mx-auto text-center relative z-10">
+      </div>
+      <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]"></div>
+      <div className="relative text-center px-4">
         <motion.h1 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -22,7 +16,7 @@ const ContactHero = () => {
         >
           Get in <span className="text-blue-600">Touch</span>
         </motion.h1>
-        <p className="text-slate-600 max-w-2xl mx-auto text-sm font-black uppercase tracking-[0.3em]">
+        <p className="text-slate-600 mt-6 text-[15px] font-black max-w-2xl mx-auto uppercase tracking-[0.2em]">
           Have questions about solar installations or EV charging? Our team is here to help you 
           every step of the way.
         </p>
