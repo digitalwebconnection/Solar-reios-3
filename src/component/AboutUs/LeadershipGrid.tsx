@@ -1,44 +1,85 @@
 import { motion } from "framer-motion";
 
 const leaders = [
-  { name: "Raman Bhatia", role: "Founder & MD", bio: "A visionary with 20+ years in power electronics, leading the green energy shift.", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=300" },
-  { name: "Sarika Bhatia", role: "Whole Time Director", bio: "Driving organizational excellence and strategic partnerships across India.", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" },
-  { name: "Pawan Saxena", role: "CTO", bio: "Tech expert focusing on next-gen EV charging and smart solar integration.", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=300" },
+  {
+    name: "Raman Bhatia",
+    role: "Founder & MD",
+    bio: "A visionary with 20+ years in power electronics, leading the green energy shift.",
+    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    name: "Sarika Bhatia",
+    role: "Whole Time Director",
+    bio: "Driving organizational excellence and strategic partnerships across India.",
+    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    name: "Pawan Saxena",
+    role: "CTO",
+    bio: "Tech expert focusing on next-gen EV charging and smart solar integration.",
+    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800"
+  },
 ];
 
 const LeadershipGrid = () => {
   const fadeIn = {
-    initial: { opacity: 0, y: 30 },
+    initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.5 }
   };
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="text-center mb-16">
-          <p className="text-blue-600 font-black uppercase tracking-widest text-[10px] mb-2">Our Visionaries</p>
-          <h2 className="text-4xl font-heading font-black text-slate-900 uppercase tracking-tight">Meet Our Leaders</h2>
+
+        {/* Heading */}
+        <div className="text-center mb-14">
+          <p className="text-blue-600 text-xs font-semibold uppercase tracking-widest mb-2">
+            Our Visionaries
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+            Meet Our Leaders
+          </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12">
+        {/* Grid */}
+        <div className="grid md:grid-cols-3 gap-8">
           {leaders.map((leader, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               {...fadeIn}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white p-8 rounded-[40px] shadow-xl shadow-slate-200/40 text-center border border-slate-100 hover:border-blue-600 transition-all duration-300"
+              className="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-md transition"
             >
-              <div className="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden border-4 border-slate-100 p-1 group-hover:border-blue-600 transition-colors">
-                <img src={leader.img} className="w-full h-full object-cover rounded-full" alt={leader.name} />
+              {/* IMAGE (Top - 70%) */}
+              <div className="h-52 w-full">
+                <img
+                  src={leader.img}
+                  alt={leader.name}
+                  className="w-full h-full object-fill"
+                />
               </div>
-              <h4 className="text-2xl font-heading font-black text-slate-900 mb-1">{leader.name}</h4>
-              <p className="text-blue-600 font-black text-[10px] mb-4 uppercase tracking-widest">{leader.role}</p>
-              <p className="text-slate-500 text-sm font-medium italic leading-relaxed">"{leader.bio}"</p>
+
+              {/* CONTENT (Bottom - 30%) */}
+              <div className="p-5 text-center">
+                <h4 className="text-lg font-semibold text-slate-900">
+                  {leader.name}
+                </h4>
+
+                <p className="text-blue-600 text-sm font-medium mb-2">
+                  {leader.role}
+                </p>
+
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {leader.bio}
+                </p>
+              </div>
+
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
