@@ -55,7 +55,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
+    <header className="sticky top-0 left-0 w-full z-50">
       {/* Top Bar / Stock Ticker */}
       <div className="bg-slate-900 text-white text-[10px] py-2 px-4 md:px-8 hidden md:block border-b border-white/5 uppercase tracking-widest font-black">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -126,8 +126,8 @@ const Header = () => {
                   <Link
                     to={link.path}
                     className={`py-2 transition-all relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-blue-600 after:transition-all ${location.pathname === link.path
-                        ? "text-blue-600 after:w-full"
-                        : "hover:text-blue-600 after:w-0 hover:after:w-full"
+                      ? "text-blue-600 after:w-full"
+                      : "hover:text-blue-600 after:w-0 hover:after:w-full"
                       }`}
                   >
                     {link.title}

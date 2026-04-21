@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { Award } from "lucide-react";
 
-const awards = [
-  { title: "Best Solar Brand 2023", body: "Economic Times", year: "2023" },
-  { title: "Innovation in EV Tech", body: "NITI Aayog", year: "2024" },
-  { title: "Fastest Growing Company", body: "MSME India", year: "2022" },
-  { title: "Top 100 EPC Players", body: "Solar Quarter", year: "2023" },
+const galleryImages = [
+  "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=800&q=80",
 ];
 
 const AwardsSection = () => {
@@ -13,32 +14,56 @@ const AwardsSection = () => {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
-    transition: { duration: 0.6 }
   };
 
   return (
-    <section className="py-24 overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-4 text-center md:text-left">
-          <h2 className="text-4xl font-heading font-black text-slate-900 uppercase">Awards & Felicitations</h2>
-          <div className="h-0.5 grow bg-slate-100 mx-8 hidden md:block"></div>
-          <Award className="text-blue-600" size={40} />
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* HEADER */}
+        <div className="text-center mb-14">
+          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900">
+            Moments & <span className="text-blue-600">Highlights</span>
+          </h2>
+          <p className="text-gray-500 mt-3">
+            A glimpse of our achievements and journey
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {awards.map((award, idx) => (
-            <motion.div 
+        {/* GRID */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+
+          {galleryImages.map((img, idx) => (
+            <motion.div
               key={idx}
               {...fadeIn}
-              transition={{ delay: idx * 0.1 }}
-              className="p-8 border border-slate-100 rounded-4xl text-center hover:shadow-2xl transition-all hover:border-blue-600 group bg-slate-50/50"
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ y: -6 }}
+              className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition"
             >
-              <div className="text-blue-600 font-black text-3xl mb-4 group-hover:scale-110 transition-transform">{award.year}</div>
-              <h5 className="font-bold text-slate-900 mb-2 truncate">{award.title}</h5>
-              <p className="text-sm text-slate-500">{award.body}</p>
+
+              {/* IMAGE */}
+              <img
+                src={img}
+                alt="Gallery"
+                className="w-full h-56 object-cover transition duration-500 group-hover:scale-110"
+              />
+
+              {/* OVERLAY */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition" />
+
+              {/* TEXT */}
+              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition">
+                <p className="text-sm font-medium">
+                  Project Highlight
+                </p>
+              </div>
+
             </motion.div>
           ))}
+
         </div>
+
       </div>
     </section>
   );
