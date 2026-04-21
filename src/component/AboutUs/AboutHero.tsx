@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
+
 import abouthero from "../../assets/abouthero.png";
+
 
 const AboutHero = () => {
   return (

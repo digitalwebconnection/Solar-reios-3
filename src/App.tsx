@@ -7,10 +7,14 @@ import Layout from "./component/Layout";
 import Home from "./component/home/Homemain";
 
 // About Us
-import AboutUs from "./component/AboutUs/AboutUsMain";
+import AboutHero from "./component/AboutUs/AboutHero";
+import CompanyStory from "./component/AboutUs/CompanyStory";
+import LeadershipGrid from "./component/AboutUs/LeadershipGrid";
+import AwardsSection from "./component/AboutUs/AwardsSection";
+import TestimonialsSection from "./component/AboutUs/TestimonialsSection";
 
 // Products
-import ProductsHero from "./component/Products/ProductsHero";
+
 import ProductFilter from "./component/Products/ProductFilter";
 import ProductGrid from "./component/Products/ProductGrid";
 import ProductCTA from "./component/Products/ProductCTA";
@@ -44,8 +48,19 @@ import ContactForm from "./component/ContactUs/ContactForm";
 import OfficeDetails from "./component/ContactUs/OfficeDetails";
 import MapSection from "./component/ContactUs/MapSection";
 import QuickActions from "./component/ContactUs/QuickActions";
+import ProductsHero from "./component/Products/ProductsHero";
 
 // --- Local Page Aggregators ---
+
+const AboutUs = () => (
+  <>
+    <AboutHero />
+    <CompanyStory />
+    <LeadershipGrid />
+    <AwardsSection />
+    <TestimonialsSection />
+  </>
+);
 
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -59,7 +74,7 @@ const Products = () => {
         activeCategory={activeCategory} 
         setActiveCategory={setActiveCategory} 
       />
-      <ProductGrid products={[]} />
+      <ProductGrid products={[]} /> {/* Passes empty array for now */}
       <ProductCTA />
     </>
   );

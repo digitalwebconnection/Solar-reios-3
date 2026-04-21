@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { Award } from "lucide-react";
-
 
 const galleryImages = [
   "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=80",
@@ -13,41 +11,57 @@ const galleryImages = [
 
 const AwardsSection = () => {
   const fadeIn = {
-    initial: { opacity: 0, y: 20 },
+    initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
-    transition: { duration: 0.5 }
   };
 
   return (
-    <section className="py-24 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
 
-        {/* ===== Gallery Section ===== */}
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-3">
+        {/* HEADER */}
+        <div className="text-center mb-14">
+          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900">
             Moments & <span className="text-blue-600">Highlights</span>
           </h2>
-          <p className="text-slate-500 mt-2">
+          <p className="text-gray-500 mt-3">
             A glimpse of our achievements and journey
           </p>
         </div>
 
+        {/* GRID */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+
           {galleryImages.map((img, idx) => (
             <motion.div
               key={idx}
               {...fadeIn}
-              transition={{ delay: idx * 0.1 }}
-              className="overflow-hidden rounded-xl border border-slate-200 group"
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ y: -6 }}
+              className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition"
             >
+
+              {/* IMAGE */}
               <img
                 src={img}
                 alt="Gallery"
-                className="w-full h-56 object-cover group-hover:scale-105 transition duration-300"
+                className="w-full h-56 object-cover transition duration-500 group-hover:scale-110"
               />
+
+              {/* OVERLAY */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition" />
+
+              {/* TEXT */}
+              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition">
+                <p className="text-sm font-medium">
+                  Project Highlight
+                </p>
+              </div>
+
             </motion.div>
           ))}
+
         </div>
 
       </div>
