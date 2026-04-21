@@ -21,7 +21,7 @@ const AwardsSection = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-4 text-center md:text-left">
           <h2 className="text-4xl font-heading font-black text-slate-900 uppercase">Awards & Felicitations</h2>
-          <div className="h-0.5 flex-grow bg-slate-100 mx-8 hidden md:block"></div>
+          <div className="h-0.5 grow bg-slate-100 mx-8 hidden md:block"></div>
           <Award className="text-blue-600" size={40} />
         </div>
 
@@ -31,7 +31,7 @@ const AwardsSection = () => {
               key={idx}
               {...fadeIn}
               transition={{ delay: idx * 0.1 }}
-              className="p-8 border border-slate-100 rounded-[32px] text-center hover:shadow-2xl transition-all hover:border-blue-600 group bg-slate-50/50"
+              className="p-8 border border-slate-100 rounded-4xl text-center hover:shadow-2xl transition-all hover:border-blue-600 group bg-slate-50/50"
             >
               <div className="text-blue-600 font-black text-3xl mb-4 group-hover:scale-110 transition-transform">{award.year}</div>
               <h5 className="font-bold text-slate-900 mb-2 truncate">{award.title}</h5>

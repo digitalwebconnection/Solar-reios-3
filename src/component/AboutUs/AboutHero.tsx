@@ -1,7 +1,4 @@
 import { motion } from "framer-motion";
-// import { Link } from "react-router-dom";
-// import { ChevronRight } from "lucide-react";
-// import heroVideo from "../../assets/ongred.jpg";
 
 const AboutHero = () => {
   return (

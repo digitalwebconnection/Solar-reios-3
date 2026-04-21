@@ -10,7 +10,7 @@ const LifeAtCompany = () => {
            <p className="text-slate-500 max-w-md md:text-right font-medium text-sm leading-relaxed">Transparency, innovation, and a shared passion for a greener world define our workplace.</p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 h-[600px]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 h-150">
           <div className="col-span-2 row-span-2 rounded-[40px] overflow-hidden group border border-slate-100 shadow-xl">
              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Team Work" />
           </div>
@@ -20,7 +20,7 @@ const LifeAtCompany = () => {
           <div className="rounded-[40px] overflow-hidden group border border-slate-100 shadow-xl">
              <img src="https://images.unsplash.com/photo-1557426272-fc759fbbad95?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Meetings" />
           </div>
-          <div className="col-span-2 rounded-[40px] overflow-hidden group h-[280px] border border-slate-100 shadow-xl">
+          <div className="col-span-2 rounded-[40px] overflow-hidden group h-70 border border-slate-100 shadow-xl">
              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Office Events" />
           </div>
         </div>

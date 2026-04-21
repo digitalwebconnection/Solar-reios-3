@@ -15,9 +15,12 @@ import TestimonialsSection from "./component/AboutUs/TestimonialsSection";
 
 // Products
 import ProductsHero from "./component/Products/ProductsHero";
-import ProductFilter from "./component/Products/ProductFilter";
-import ProductGrid from "./component/Products/ProductGrid";
-import ProductCTA from "./component/Products/ProductCTA";
+import EVChargerSection from "./component/Products/EVChargerSection";
+import SolarProductsSection from "./component/Products/SolarProductsSection";
+import PowerBackupSection from "./component/Products/PowerBackupSection";
+import Electric3WSection from "./component/Products/Electric3WSection";
+import LEDSSection from "./component/Products/LEDSSection";
+import OthersSection from "./component/Products/OthersSection";
 
 // Solutions - Solar EPC
 import SolarEPCHero from "./component/Solutions/SolarEPC/SolarEPCHero";
@@ -62,19 +65,15 @@ const AboutUs = () => (
 );
 
 const Products = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const categories = ["All", "Solar Panels", "Inverters", "Batteries", "EV Chargers"];
-  
   return (
     <>
       <ProductsHero />
-      <ProductFilter 
-        categories={categories} 
-        activeCategory={activeCategory} 
-        setActiveCategory={setActiveCategory} 
-      />
-      <ProductGrid products={[]} /> {/* Passes empty array for now */}
-      <ProductCTA />
+      <EVChargerSection />
+      <SolarProductsSection />
+      <PowerBackupSection />
+      <Electric3WSection />
+      <LEDSSection />
+      <OthersSection />
     </>
   );
 };

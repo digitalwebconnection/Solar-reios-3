@@ -46,7 +46,7 @@ const CompanyStory = () => {
       <motion.div {...fadeIn} className="relative">
         <img 
           src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1000" 
-          className="rounded-[40px] shadow-2xl object-cover h-[500px] w-full border border-slate-100"
+          className="rounded-[40px] shadow-2xl object-cover h-125 w-full border border-slate-100"
           alt="Team Meeting"
         />
       </motion.div>
