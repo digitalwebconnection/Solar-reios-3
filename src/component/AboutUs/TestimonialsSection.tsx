@@ -17,7 +17,7 @@ const TestimonialsSection = () => {
 
   return (
     <section className="py-24 bg-white border-t border-slate-50 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
+      <div className="absolute top-0 left-0 w-full h-full opacity-[0.04] pointer-events-none">
          <Quote size={400} className="text-slate-900 absolute -top-20 -left-20" />
       </div>
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
