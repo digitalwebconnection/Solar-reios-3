@@ -5,7 +5,7 @@ import LegacySection from "./Legacy";
 import LeadershipGrid from "./LeadershipGrid";
 import AwardsSection from "./AwardsSection";
 import Milestone from "./Milestones";
-// import TestimonialsSection from "./TestimonialsSection";
+import TestimonialsSection from "./TestimonialsSection";
 
 const AboutUsMain = () => {
   return (
@@ -16,6 +16,7 @@ const AboutUsMain = () => {
       <Milestone />
       <LeadershipGrid />
       <AwardsSection />
+      <TestimonialsSection />
     </>
   );
 };

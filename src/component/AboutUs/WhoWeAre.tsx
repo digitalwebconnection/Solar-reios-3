@@ -1,62 +1,114 @@
-import { motion } from "framer-motion";
-import { Building2 } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
 
-const WhoWeAre = () => {
-  const fadeIn = {
-    initial: { opacity: 0, y: 40 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.7, ease: "easeOut" }
-  } as const;
+const AboutSection = () => {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+    },
+  };
+
+  const fadeInUp: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] },
+    },
+  };
 
   return (
-    <section className="py-28 bg-gradient-to-b from-white to-slate-50">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-          {/* LEFT → CONTENT */}
-          <motion.div {...fadeIn}>
-            <div className="flex items-center gap-2 text-blue-600 font-semibold mb-5">
-              <Building2 size={18} />
-              <span className="uppercase tracking-widest text-xs">Who we are</span>
+    <section className="relative py-20 px-6 md:py-32  overflow-hidden font-sans">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center"
+        >
+          {/* LEFT CONTENT AREA */}
+          <div className="lg:col-span-7 relative">
+            {/* OUTLINE WATERMARK - "ABOUT" */}
+            <div className="absolute -top-16 -left-4 select-none pointer-events-none">
+              <h2 
+                className="text-8xl md:text-[140px] font-black leading-none drop-shadow-[0_2px_0px_rgba(0,0,0,0.8)] opacity-[0.1]"
+                style={{ WebkitTextStroke: "1px #000", color: "transparent" }}
+              >
+                ABOUT US
+              </h2>
             </div>
 
-            <h2 className="text-5xl md:text-6xl font-black text-slate-900 leading-tight mb-8">
-              Driving Change <br />
-              <span className="text-blue-600">As A Disruptor</span>
-            </h2>
+            <motion.div variants={fadeInUp} className="relative z-10">
+              {/* SECTION TAG */}
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-0.5 h-6 bg-blue-500"></span>
+                <span className="text-blue-600 font-semibold text-lg">Who we are</span>
+              </div>
 
-            <div className="space-y-5 text-slate-600 text-lg leading-relaxed">
-              <p>
-                Servotech Renewable Power System Ltd. (NSE: SERVOTECH), a leading Indian clean energy solutions provider, specializes in solar innovations and EV charging solutions.
-              </p>
+              {/* MAIN HEADING */}
+              <h3 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">
+                Driving Change As A Disruptor
+              </h3>
 
-              <p>
-                With a pan-India presence, agile manufacturing, and strong R&D capabilities, Servotech is driving India’s transition toward a sustainable, energy-independent, and technologically empowered future.
-              </p>
+              {/* BODY TEXT */}
+              <div className="space-y-6 text-slate-700 leading-relaxed text-base md:text-lg">
+                <p>
+                  <span className="font-bold text-slate-900">Servotech Renewable Power System Ltd. (NSE: SERVOTECH)</span>, 
+                  a leading Indian clean energy solutions provider, specializing in solar innovations and EV charging solutions. 
+                  With a pan-India presence, agile manufacturing, and strong R&D capabilities, Servotech is driving India's 
+                  transition toward a sustainable, energy-independent, and technologically empowered future.
+                </p>
+                <p>
+                  Through continuous innovation, strategic collaborations, and large-scale deployments, the company 
+                  delivers reliable, high-performance solutions that support the nation's clean energy goals. 
+                  Servotech's comprehensive portfolio spanning solar panels, inverters, batteries, and EV chargers 
+                  reflects its commitment to engineering excellence and environmental stewardship.
+                </p>
+        
+              </div>
+            </motion.div>
+          </div>
 
-              <p>
-                Through continuous innovation, strategic collaborations, and large-scale deployments, the company delivers reliable, high-performance solutions that support the nation’s clean energy goals.
-              </p>
+          {/* RIGHT VISUAL CARD */}
+          <motion.div variants={fadeInUp} className="lg:col-span-5">
+            <div className="relative group bg-white shadow-2xl rounded-sm overflow-hidden border border-slate-100">
+              {/* TOP BRANDED AREA (Dark Background) */}
+              <div className="bg-[#d6d6d6]  p-1 flex items-center justify-center relative overflow-hidden">
+                {/* 21+ Years Graphic (Placeholder for your specific SVG/Image) */}
+                <div className="relative z-10 w-full ">
+                   <img 
+                    src="https://bsmedia.business-standard.com/_media/bs/img/article/2021-01/25/full/1611598969-4853.jpg" 
+                    alt="21 Years of Excellence" 
+                    className="w-full h-auto"
+                  />
+                  {/* Note: I recommend using the specific 21+ Years SVG here 
+                      to match the "green circle" design exactly as seen in the image. */}
+                </div>
+                
+                {/* Subtle Leaf Background Icon (SVG) */}
+               
+              </div>
+
+              {/* BOTTOM CAPTION AREA */}
+             <div className="p-8 text-center bg-white">
+  <p className="text-xl font-medium">
+    <span className="text-orange-500 font-bold">10+ Years Of</span>{" "}
+    <span className="font-extrabold text-slate-900">Solar Excellence</span>{" "}
+    <span className="text-slate-600">&</span>{" "}
+    <span className="text-orange-500 font-bold italic">Sustainable</span>{" "}
+    <span className="font-extrabold text-slate-900">Energy Solutions</span>
+  </p>
+</div>
+              {/* Subtle accent line on hover */}
+              <div className="absolute bottom-0 left-0 h-1 bg-green-500 w-0 group-hover:w-full transition-all duration-500" />
             </div>
           </motion.div>
-
-          {/* RIGHT → IMAGE */}
-          <motion.div {...fadeIn} className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500/20 to-orange-400/20 blur-2xl rounded-[40px]" />
-            <img
-              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1000"
-              className="relative shadow-2xl object-cover h-[520px] w-full"
-              alt="Team"
-            />
-          </motion.div>
-
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default WhoWeAre;
+export default AboutSection;

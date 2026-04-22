@@ -7,17 +7,10 @@ import Layout from "./component/Layout";
 import Home from "./component/home/Homemain";
 
 // About Us
-import AboutHero from "./component/AboutUs/AboutHero";
-import CompanyStory from "./component/AboutUs/CompanyStory";
-import LeadershipGrid from "./component/AboutUs/LeadershipGrid";
-import AwardsSection from "./component/AboutUs/AwardsSection";
-import TestimonialsSection from "./component/AboutUs/TestimonialsSection";
+import AboutUsMain from "./component/AboutUs/AboutUsMain";
 
 // Products
-
-import ProductFilter from "./component/Products/ProductFilter";
-import ProductGrid from "./component/Products/ProductGrid";
-import ProductCTA from "./component/Products/ProductCTA";
+import ProductsMain from "./component/Products/ProductsMain";
 
 // Solutions - Solar EPC
 import SolarEPCHero from "./component/Solutions/SolarEPC/SolarEPCHero";
@@ -43,42 +36,21 @@ import BlogFilter from "./component/Blogs/BlogFilter";
 import BlogGrid from "./component/Blogs/BlogGrid";
 
 // Contact Us
-import ContactHero from "./component/ContactUs/ContactHero";
-import ContactForm from "./component/ContactUs/ContactForm";
-import OfficeDetails from "./component/ContactUs/OfficeDetails";
-import MapSection from "./component/ContactUs/MapSection";
-import QuickActions from "./component/ContactUs/QuickActions";
-import ProductsHero from "./component/Products/ProductsHero";
+import ContactUsMain from "./component/ContactUs/ContactUsMain";
 
 // --- Local Page Aggregators ---
 
 const AboutUs = () => (
   <>
-    <AboutHero />
-    <CompanyStory />
-    <LeadershipGrid />
-    <AwardsSection />
-    <TestimonialsSection />
+    <AboutUsMain/>
   </>
 );
 
-const Products = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const categories = ["All", "Solar Panels", "Inverters", "Batteries", "EV Chargers"];
-  
-  return (
-    <>
-      <ProductsHero />
-      <ProductFilter 
-        categories={categories} 
-        activeCategory={activeCategory} 
-        setActiveCategory={setActiveCategory} 
-      />
-      <ProductGrid products={[]} /> {/* Passes empty array for now */}
-      <ProductCTA />
-    </>
-  );
-};
+const Products = () => (
+  <>
+    <ProductsMain />
+  </>
+);
 
 const SolarEPC = () => (
   <>
@@ -125,17 +97,7 @@ const Blogs = () => {
 
 const ContactUs = () => (
   <>
-    <ContactHero />
-    <QuickActions />
-    <section className="bg-slate-50/50 py-24">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <OfficeDetails />
-          <ContactForm />
-        </div>
-      </div>
-    </section>
-    <MapSection />
+    <ContactUsMain />
   </>
 );
 

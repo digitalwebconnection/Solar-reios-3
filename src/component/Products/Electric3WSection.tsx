@@ -18,8 +18,8 @@ const Electric3WSection = () => {
     <section className="py-24 bg-[#f8fafc] relative overflow-hidden">
 
       {/* SOFT BACKGROUND GLOW */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-200/30 blur-[120px] rounded-full" />
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-blue-100/40 blur-[100px] rounded-full" />
+      <div className="absolute top-0 left-0 w-100 h-100 bg-blue-200/30 blur-[120px] rounded-full" />
+      <div className="absolute bottom-0 right-0 w-75 h-75 bg-blue-100/40 blur-[100px] rounded-full" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -51,8 +51,8 @@ const Electric3WSection = () => {
           >
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1619405399517-d4dc2500eaa0?w=800&q=80"
-                className="w-full h-[420px] object-cover"
+                src="https://cdn11.bigcommerce.com/s-o8a7xpro4o/images/stencil/564x564/uploaded_images/hv.jpeg"
+                className="w-full h-105 object-cover"
               />
             </div>
 

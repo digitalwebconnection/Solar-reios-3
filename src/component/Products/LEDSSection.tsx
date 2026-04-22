@@ -1,145 +1,157 @@
 import { motion } from "framer-motion";
 import { Lightbulb, Wifi, Zap } from "lucide-react";
 
+const features = [
+  {
+    title: "Smart Controls",
+    desc: "App-based dimming & automation",
+    icon: <Wifi size={20} />,
+  },
+  {
+    title: "Energy Efficient",
+    desc: "Up to 80% less power consumption",
+    icon: <Zap size={20} />,
+  },
+  {
+    title: "Long Life",
+    desc: "50,000+ hours lifespan",
+    icon: <Lightbulb size={20} />,
+  },
+];
+
 const LEDSSection = () => {
-  const features = [
-    {
-      title: "Smart Controls",
-      desc: "App-based dimming and color adjustment",
-      icon: <Wifi size={32} />
-    },
-    {
-      title: "Energy Efficient",
-      desc: "80% less power consumption than traditional",
-      icon: <Zap size={32} />
-    },
-    {
-      title: "Long Life",
-      desc: "50,000+ hours operational lifespan",
-      icon: <Lightbulb size={32} />
-    }
-  ];
-
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      {/* Animated grid effect */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-1/2 -left-1/2 w-full h-full border border-blue-600 rounded-full"
-        ></motion.div>
-      </div>
+    <section className="py-28 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            className="inline-block px-4 py-2 bg-blue-600 text-white text-xs font-black rounded-full uppercase tracking-widest mb-4 border-2 border-black"
-          >
+      {/* SOFT GLOW */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-100 blur-[120px] rounded-full" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-yellow-100 blur-[120px] rounded-full" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+        {/* HEADER */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest">
             Smart Lighting
-          </motion.span>
+          </p>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-heading font-black text-black mb-4"
-          >
-            Smart LED Systems
-          </motion.h2>
+          <h2 className="mt-4 text-4xl md:text-5xl font-black text-gray-900">
+            LED Lighting <span className="text-blue-600">Reimagined</span>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-black/70 max-w-2xl mx-auto"
-          >
-            Intelligent lighting solutions for homes, offices, and outdoor spaces with advanced control systems
-          </motion.p>
+          <p className="mt-5 text-gray-600">
+            Intelligent lighting systems built for efficiency, control,
+            and modern living.
+          </p>
         </div>
 
-        {/* Features Showcase */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {features.map((feature, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              whileHover={{ scale: 1.05, y: -10 }}
-              className="group relative p-8 rounded-3xl bg-white border-4 border-black shadow-xl hover:shadow-2xl transition-all"
-            >
-              <div className="relative z-10">
-                <motion.div
-                  whileHover={{ rotate: 12, scale: 1.2 }}
-                  className="p-4 rounded-xl bg-blue-600 text-white inline-block mb-6 shadow-lg"
-                >
-                  {feature.icon}
-                </motion.div>
+        {/* 🔥 FEATURED PRODUCT (NEW) */}
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
 
-                <h3 className="text-2xl font-black text-black mb-3">{feature.title}</h3>
-                <p className="text-black/70 leading-relaxed">{feature.desc}</p>
-              </div>
+          {/* IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="relative"
+          >
+            <img
+              src="https://qbmindia.com/wp-content/uploads/2024/12/51KCVfyVqwL._SL1030_.jpg"
+              className="rounded-3xl shadow-xl w-full h-[400px] object-contain"
+            />
 
-              {/* Animated bottom border */}
-              <motion.div
-                initial={{ width: 0 }}
-                whileHover={{ width: "100%" }}
-                transition={{ duration: 0.3 }}
-                className="h-1 bg-blue-600 rounded-full mt-6 absolute bottom-0 left-0"
-              ></motion.div>
-            </motion.div>
-          ))}
+            {/* FLOATING TAG */}
+            <div className="absolute top-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-sm font-semibold shadow">
+              Indoor LED Panel
+            </div>
+          </motion.div>
+
+          {/* CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+          >
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Premium Indoor Lighting
+            </h3>
+
+            <p className="text-gray-600 mb-6">
+              Designed for modern interiors, our LED panels deliver
+              uniform brightness, energy efficiency, and sleek aesthetics.
+            </p>
+
+            {/* FEATURES INLINE */}
+            <div className="space-y-3 mb-6">
+              {features.map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="p-2 bg-blue-600 text-white rounded-md">
+                    {item.icon}
+                  </div>
+                  <span className="text-gray-700 text-sm">
+                    {item.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition shadow-md">
+              Explore Product →
+            </button>
+          </motion.div>
         </div>
 
-        {/* Product Cards */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* 🔥 PRODUCT GRID */}
+        <div className="grid md:grid-cols-3 gap-8">
+
           {[
             {
-              name: "Indoor LED Panels",
-              wattage: "10-50W"
+              name: "Outdoor LED Lights",
+              wattage: "20–100W",
+              img: "https://litverse.in/cdn/shop/files/1_e10033a4-f25c-42e3-91e2-30a4c655d08e.jpg?v=1758348924"
             },
             {
-              name: "Outdoor LED Lights",
-              wattage: "20-100W"
+              name: "Street LED",
+              wattage: "30–120W",
+              img: "https://images.unsplash.com/photo-1507477338202-487281e6c27e?w=800"
+            },
+            {
+              name: "Decorative LED",
+              wattage: "5–20W",
+              img: "https://images.unsplash.com/photo-1493666438817-866a91353ca9?w=800"
             }
           ].map((product, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="group relative p-10 rounded-2xl bg-gradient-to-br from-blue-600 to-black text-white overflow-hidden cursor-pointer hover:shadow-2xl transition-all border-2 border-black"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -8 }}
+              className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition"
             >
-              <motion.div
-                animate={{ rotate: [0, 10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute opacity-10"
-              >
-                <Lightbulb size={150} className="absolute -top-10 -right-10" />
-              </motion.div>
+              <img
+                src={product.img}
+                className="w-full h-48 object-cover group-hover:scale-110 transition duration-700"
+              />
 
-              <div className="relative z-10">
-                <h3 className="text-3xl font-black mb-4">{product.name}</h3>
-                <p className="text-white/80 mb-6 font-bold">Power Range: {product.wattage}</p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-2 bg-white text-black font-black rounded-lg hover:shadow-lg transition-all border border-white"
-                >
-                  Learn More
-                </motion.button>
+              <div className="p-5">
+                <h3 className="font-bold text-gray-900">
+                  {product.name}
+                </h3>
+
+                <p className="text-sm text-gray-500 mt-1">
+                  Power Range: {product.wattage}
+                </p>
+
+                <button className="mt-4 text-blue-600 font-semibold text-sm hover:underline">
+                  View Details →
+                </button>
               </div>
             </motion.div>
           ))}
+
         </div>
+
       </div>
     </section>
   );
 };
 
-export default LEDSSection;
+export default LEDSSection;  

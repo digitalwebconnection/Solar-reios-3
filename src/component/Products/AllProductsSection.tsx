@@ -1,146 +1,133 @@
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight, Zap, Sun, Battery, Car } from "lucide-react";
 
-interface ProductCategory {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-  gradient: string;
-  layout: "featured" | "medium" | "small";
-}
+const products = [
+  {
+    title: "Solar Inverter",
+    desc: "Maximize your energy yield with intelligent N-type conversion technology. Our inverters offer real-time monitoring and 98.9% peak efficiency for total control over your power ecosystem.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS85gF0TzRJZcj5wnDvMQzibo4uRd3Uu7-vNA&s",
+    icon: <Zap className="text-blue-500" />,
+    color: "blue"
+  },
+  {
+    title: "Solar Panels",
+    desc: "Engineered for high performance. Utilizing PERC technology and bifacial glass to capture sunlight from both sides, ensuring maximum power generation even on cloudy days.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDQRd6Oqwy63I19vNp0F-Qi0jYVZ9HbGtdSA&s",
+    icon: <Sun className="text-amber-500" />,
+    color: "amber"
+  },
+  {
+    title: "Solar Batteries",
+    desc: "Energy security that never sleeps. Our Lithium-ion storage solutions feature a smart BMS (Battery Management System) for safe, long-lasting backup during critical hours.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyTTXBXWh5Z3ibZuFxo4c5Etjem6J-G4geXg&s",
+    icon: <Battery className="text-emerald-500" />,
+    color: "emerald"
+  },
+  {
+    title: "Solar Carport",
+    desc: "Transform your parking space into a power plant. Our structural solar carports provide vehicle protection while fueling your electric fleet with 100% clean energy.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlv5MCVrcXB6UGihuVHVe6zaYVOmi2l21WvQ&s",
+    icon: <Car className="text-indigo-500" />,
+    color: "indigo"
+  },
+];
 
-const AllProductsSection = () => {
-  const categories: ProductCategory[] = [
-    {
-      id: 1,
-      name: "EV Charger",
-      description: "Next-gen electric vehicle charging solutions",
-      image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800&q=80",
-      gradient: "from-blue-600 to-cyan-600",
-      layout: "featured"
-    },
-    {
-      id: 2,
-      name: "Solar Products",
-      description: "Complete solar energy systems",
-      image: "https://images.unsplash.com/photo-1509391366360-2e938d440220?w=800&q=80",
-      gradient: "from-yellow-600 to-orange-600",
-      layout: "featured"
-    },
-    {
-      id: 3,
-      name: "Power & Backup",
-      description: "Battery backup & storage",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-      gradient: "from-green-600 to-emerald-600",
-      layout: "medium"
-    },
-    {
-      id: 4,
-      name: "Electric 3W Solutions",
-      description: "Three-wheeler charging",
-      image: "https://images.unsplash.com/photo-1619405399517-d4dc2500eaa0?w=600&q=80",
-      gradient: "from-purple-600 to-pink-600",
-      layout: "medium"
-    },
-    {
-      id: 5,
-      name: "LEDS",
-      description: "Smart LED lighting",
-      image: "https://images.unsplash.com/photo-1565636192335-14f82652de9f?w=600&q=80",
-      gradient: "from-indigo-600 to-purple-600",
-      layout: "small"
-    },
-    {
-      id: 6,
-      name: "Others",
-      description: "Additional solutions",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80",
-      gradient: "from-slate-600 to-slate-700",
-      layout: "small"
-    }
-  ];
-
+const ProductShowcase = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        {/* Header */}
-        <div className="mb-16">
-          <motion.h2
+    <section className=" bg-[#fafafa] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Section Header */}
+        <div className="text-center mb-32">
+          <motion.span 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-blue-600 font-bold tracking-[0.3em] text-xs uppercase"
+          >
+            Product Ecosystem
+          </motion.span>
+          <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-heading font-black text-slate-900 mb-4"
+            className="text-5xl md:text-6xl font-black text-slate-900 mt-4"
           >
-            All Product Solutions
+            Precision <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-cyan-500">Engineering.</span>
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-slate-600"
-          >
-            Discover our complete range of renewable energy and smart solutions
-          </motion.p>
         </div>
 
-        {/* Masonry Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
-          {categories.map((category, index) => {
-            let colSpan = "md:col-span-2";
-            let rowSpan = "md:row-span-2";
-            
-            if (category.layout === "medium") {
-              colSpan = "md:col-span-2";
-              rowSpan = "md:row-span-1";
-            } else if (category.layout === "small") {
-              colSpan = "md:col-span-1";
-              rowSpan = "md:row-span-1";
-            }
+        <div className="space-y-40">
+          {products.map((item, index) => {
+            const isReverse = index % 2 !== 0;
 
             return (
-              <motion.div
-                key={category.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group relative overflow-hidden rounded-3xl cursor-pointer shadow-lg hover:shadow-2xl transition-all ${colSpan} ${rowSpan}`}
+              <div
+                key={index}
+                className={`flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24 ${
+                  isReverse ? "md:flex-row-reverse" : ""
+                }`}
               >
-                {/* Background Image */}
-                <div className="absolute inset-0 overflow-hidden">
-                  <img
-                    src={category.image}
-                    alt={category.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  {/* Overlay Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-70 group-hover:opacity-60 transition-opacity duration-300`}></div>
-                </div>
+                {/* IMAGE AREA */}
+                <div className="w-full md:w-1/2 relative group">
+                  {/* Decorative Background Aura */}
+                  <div className={`absolute inset-0 bg-${item.color}-200/30 blur-[100px] rounded-full scale-125 group-hover:scale-150 transition-transform duration-1000`} />
+                  
+                  {/* Watermark Number */}
+                  <span className="absolute -top-10 -left-10 text-[12rem] font-black text-slate-100 select-none z-0">
+                    0{index + 1}
+                  </span>
 
-                {/* Content */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 text-white">
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 + 0.2 }}
+                    initial={{ opacity: 0, scale: 0.8, x: isReverse ? 50 : -50 }}
+                    whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className="relative z-10 flex justify-center"
                   >
-                    <h3 className="text-2xl md:text-3xl font-heading font-black mb-2 group-hover:translate-x-2 transition-transform">
-                      {category.name}
-                    </h3>
-                    <p className="text-sm md:text-base text-white/90 mb-4 line-clamp-2">
-                      {category.description}
-                    </p>
-                    <div className="flex items-center gap-2 text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span>Explore</span>
-                      <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
+                    <motion.img
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                      src={item.image}
+                      alt={item.title}
+                      className="w-4/5 h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)] group-hover:drop-shadow-[0_30px_60px_rgba(37,99,235,0.2)] transition-all duration-500"
+                    />
                   </motion.div>
                 </div>
 
-                {/* Hover Border Effect */}
-                <div className="absolute inset-0 rounded-3xl border-2 border-white/30 group-hover:border-white/60 transition-all duration-300 pointer-events-none"></div>
-              </motion.div>
+                {/* CONTENT AREA */}
+                <motion.div
+                  initial={{ opacity: 0, x: isReverse ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="w-full md:w-5/12 space-y-6"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-white shadow-xl rounded-2xl">
+                      {item.icon}
+                    </div>
+                    <div className="h-px w-12 bg-slate-200" />
+                  </div>
+
+                  <h3 className="text-4xl font-black text-slate-900 tracking-tight">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-slate-500 text-lg leading-relaxed">
+                    {item.desc}
+                  </p>
+
+                  <div className="pt-4">
+                    <motion.button 
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="group flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-blue-600 transition-colors shadow-lg shadow-slate-200"
+                    >
+                      View Specifications
+                      <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+                    </motion.button>
+                  </div>
+                </motion.div>
+              </div>
             );
           })}
         </div>
@@ -149,4 +136,4 @@ const AllProductsSection = () => {
   );
 };
 
-export default AllProductsSection;
+export default ProductShowcase;

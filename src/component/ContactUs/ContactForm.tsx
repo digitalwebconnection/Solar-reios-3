@@ -1,93 +1,93 @@
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, User, Mail, Phone, MapPin, MessageSquare } from "lucide-react";
+import { Send } from "lucide-react";
 
 const ContactForm = () => {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="bg-white rounded-[48px] p-10 md:p-16 shadow-3xl border border-slate-100 relative overflow-hidden"
-    >
-       <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50/50 rounded-full blur-3xl -mr-32 -mt-32"></div>
-       
-       <div className="relative z-10">
-         <div className="mb-12">
-           <h3 className="text-4xl font-heading font-black text-slate-900 mb-4 uppercase tracking-tight">Send us a Message</h3>
-           <p className="text-slate-500 font-medium">Fill out the form below and our solar experts will get back to you shortly.</p>
-         </div>
+    <section className="py-14 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
 
-         <form className="space-y-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="relative group">
-                <User className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors" size={20} />
-                <input 
-                  type="text" 
-                  placeholder="Full Name *" 
-                  className="w-full bg-slate-50 border border-slate-100 p-6 pl-16 rounded-[24px] font-bold outline-none focus:ring-4 focus:ring-blue-600/5 focus:border-blue-600/30 transition-all text-slate-700 placeholder:text-slate-400 placeholder:font-semibold" 
-                  required 
-                />
-              </div>
-              <div className="relative group">
-                <Mail className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors" size={20} />
-                <input 
-                  type="email" 
-                  placeholder="Email Address *" 
-                  className="w-full bg-slate-50 border border-slate-100 p-6 pl-16 rounded-[24px] font-bold outline-none focus:ring-4 focus:ring-blue-600/5 focus:border-blue-600/30 transition-all text-slate-700 placeholder:text-slate-400 placeholder:font-semibold" 
-                  required 
-                />
-              </div>
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+
+          {/* LEFT CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+          >
+            <p className="text-sm text-blue-600 font-semibold uppercase tracking-widest">
+              Contact Us
+            </p>
+
+            <h2 className="text-4xl font-bold text-gray-900 mt-4 leading-tight">
+              Let’s Build Your <br /> Energy Solution
+            </h2>
+
+            <p className="text-gray-600 mt-6 max-w-md">
+              Fill out the form and our team will get back to you with the best
+              solution for your requirements.
+            </p>
+
+            <div className="mt-8 text-sm text-gray-500">
+              ✔ Quick response within 24 hours <br />
+              ✔ Expert consultation <br />
+              ✔ Customized solutions
             </div>
+          </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="relative group">
-                <Phone className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors" size={20} />
-                <input 
-                  type="tel" 
-                  placeholder="Phone Number *" 
-                  className="w-full bg-slate-50 border border-slate-100 p-6 pl-16 rounded-[24px] font-bold outline-none focus:ring-4 focus:ring-blue-600/5 focus:border-blue-600/30 transition-all text-slate-700 placeholder:text-slate-400 placeholder:font-semibold" 
-                  required 
-                />
-              </div>
-              <div className="relative group">
-                <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors" size={20} />
-                <input 
-                  type="text" 
-                  placeholder="City / State" 
-                  className="w-full bg-slate-50 border border-slate-100 p-6 pl-16 rounded-[24px] font-bold outline-none focus:ring-4 focus:ring-blue-600/5 focus:border-blue-600/30 transition-all text-slate-700 placeholder:text-slate-400 placeholder:font-semibold" 
-                />
-              </div>
-            </div>
-
-            <div className="relative group">
-              <MessageSquare className="absolute left-6 top-7 text-slate-400 group-focus-within:text-blue-600 transition-colors" size={20} />
-              <textarea 
-                placeholder="How can we help you? *" 
-                rows={4} 
-                className="w-full bg-slate-50 border border-slate-100 p-6 pl-16 rounded-[24px] font-bold outline-none focus:ring-4 focus:ring-blue-600/5 focus:border-blue-600/30 transition-all text-slate-700 placeholder:text-slate-400 placeholder:font-semibold resize-none" 
+          {/* RIGHT FORM */}
+          <motion.form
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="space-y-5"
+          >
+            <div className="grid md:grid-cols-2 gap-4">
+              <input
+                type="text"
+                placeholder="Full Name *"
+                className="w-full border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-600 outline-none"
                 required
-              ></textarea>
+              />
+              <input
+                type="email"
+                placeholder="Email Address *"
+                className="w-full border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-600 outline-none"
+                required
+              />
             </div>
-            
-            <div className="flex flex-col md:flex-row items-center gap-8 pt-4">
-              <button className="w-full md:w-auto px-12 bg-blue-600 text-white py-6 rounded-[24px] font-black uppercase tracking-widest flex items-center justify-center gap-3 shadow-xl shadow-blue-200 hover:bg-slate-900 hover:shadow-slate-200 transition-all duration-300 active:scale-95 group">
-                Submit Message 
-                <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </button>
-              
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600">
-                  <CheckCircle2 size={20} />
-                </div>
-                <div className="text-left">
-                  <p className="text-[10px] font-black text-slate-900 uppercase tracking-widest">Guaranteed Response</p>
-                  <p className="text-xs text-slate-400 font-medium">Within 24 business hours</p>
-                </div>
-              </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <input
+                type="tel"
+                placeholder="Phone Number *"
+                className="w-full border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-600 outline-none"
+                required
+              />
+              <input
+                type="text"
+                placeholder="City / State"
+                className="w-full border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-600 outline-none"
+              />
             </div>
-         </form>
-       </div>
-    </motion.div>
+
+            <textarea
+              rows={4}
+              placeholder="How can we help you? *"
+              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-blue-600 outline-none"
+              required
+            />
+
+            <button className="w-full bg-blue-600 text-white py-3 rounded-md font-semibold flex items-center justify-center gap-2 hover:bg-blue-700 transition">
+              Submit Message <Send size={16} />
+            </button>
+
+            <p className="text-xs text-gray-400 text-center">
+              We respond within 24 business hours
+            </p>
+          </motion.form>
+
+        </div>
+
+      </div>
+    </section>
   );
 };
 

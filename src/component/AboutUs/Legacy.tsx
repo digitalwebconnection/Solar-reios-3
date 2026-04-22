@@ -1,115 +1,109 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+import { useState } from "react";
 
-const LegacySection = () => {
+const FlipCard = ({ title, content, image, cardVariants }: { title: string, content: string, image: string, cardVariants: Variants }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   return (
-    <section className="py-24 bg-[#f5f5f5]">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
-
-        {/* OUR LEGACY */}
-        <div className="mb-16">
-          <div className="text-center mb-16">
-
-            {/* Small Tag */}
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-3">
-              Our Legacy
-            </h4>
-
-            {/* Main Heading */}
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-3">
-              How We <span className="text-blue-600">Started</span>
-            </h2>
-
-            {/* Sub Heading */}
-            <h3 className="text-lg md:text-xl font-semibold text-slate-600">
-              History
-            </h3>
-
+    <motion.div
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.3 }}
+      className="h-90 w-full perspective-[1000px] group"
+    >
+      <motion.div
+        variants={cardVariants}
+        animate={isFlipped ? { rotateY: 180 } : { rotateY: 0 }}
+        transition={{ duration: 0.6 }}
+        onMouseEnter={() => setIsFlipped(true)}
+        onMouseLeave={() => setIsFlipped(false)}
+        className="relative w-full h-full transform-3d cursor-pointer"
+      >
+        {/* FRONT SIDE */}
+        <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full h-full object-cover  transition-all duration-500" 
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
+          <div className="absolute bottom-8 left-8">
+            <div className="w-12 h-1 bg-blue-600 mb-3 rounded-full" />
+            <h2 className="text-3xl font-bold text-white uppercase tracking-tight">{title}</h2>
+            <p className="text-blue-400 text-sm font-semibold tracking-widest mt-1">HOVER TO REVEAL</p>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-[15px] md:text-[16px] leading-[1.9] text-gray-800"
-          >
-            <p>
-              Having forayed into the industry in 2004 with the introduction of
-              Sine-Wave inverters for domestic and commercial use, Servotech
-              witnessed dramatic growth over the subsequent years since inception
-              while launching a series of LED lighting solutions, Solar Street
-              lights, Solar-Hybrid Inverters, LED solar lighting solutions
-              followed by its positioning as a giant and making its debut in the
-              stock market and being listed on the National Stock Exchange (NSE)
-              in the year 2017. To bridge the demand-supply gaps for medical-grade
-              equipment since the COVID-19 outbreak, Servotech emerged as one of
-              the sole providers of Oxygen Concentrators as well as UV-C
-              disinfectant products.
-            </p>
-
-            <p className="mt-6">
-              With a defining history of delivering unmatched and unparalleled
-              product and service offerings, Servotech has carved a niche for
-              itself. Rising as a disruptor within the industry, Servotech has
-              progressed leaps and bounds over the years by incorporating
-              ultra-modern methods, techniques and ethical practices to ensure
-              superior-grade development which could bring a change for the
-              society and complements the environment at large.
-            </p>
-          </motion.div>
         </div>
 
-        {/* MISSION & VISION */}
-        <div className="grid md:grid-cols-2 gap-8 mt-16">
-
-          {/* Mission */}
-          <div className="group relative rounded-2xl overflow-hidden border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-
-            {/* Animated Light Sweep */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
-              <div className="absolute -left-1/2 top-0 h-full w-1/2 bg-gradient-to-r from-transparent via-blue-200/40 to-transparent skew-x-12 group-hover:left-full transition-all duration-700" />
-            </div>
-
-            {/* Border Pulse */}
-            <div className="absolute inset-0 rounded-2xl border border-blue-400 opacity-0 group-hover:opacity-100 group-hover:animate-pulse pointer-events-none" />
-
-            {/* Top Accent */}
-            <div className="w-12 h-1 bg-blue-600 mb-5 rounded-full transition-all duration-300 group-hover:w-24" />
-
-            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 transition group-hover:text-blue-600">
-              MISSION
-            </h2>
-
-            <p className="text-[15px] md:text-[16px] leading-[1.9] text-gray-700">
-              To provide the most advanced cutting-edge technological and innovative solutions for a sustainable future. To empower our skilled workforce through knowledge sharing, associations, and collaborations to help society embrace the change of energy transition.
-            </p>
+        {/* BACK SIDE (Rotated 180deg) */}
+        <div className="absolute inset-0 w-full h-full backface-hidden transform-[rotateY(180deg)] rounded-2xl bg-white border-2 border-blue-600 p-10 flex flex-col justify-center shadow-2xl">
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600 rounded-bl-full" />
           </div>
-
-
-          {/* Vision */}
-          <div className="group relative rounded-2xl overflow-hidden border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-
-            {/* Animated Light Sweep */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
-              <div className="absolute -left-1/2 top-0 h-full w-1/2 bg-gradient-to-r from-transparent via-blue-200/40 to-transparent skew-x-12 group-hover:left-full transition-all duration-700" />
-            </div>
-
-            {/* Border Pulse */}
-            <div className="absolute inset-0 rounded-2xl border border-blue-400 opacity-0 group-hover:opacity-100 group-hover:animate-pulse pointer-events-none" />
-
-            {/* Top Accent */}
-            <div className="w-12 h-1 bg-blue-600 mb-5 rounded-full transition-all duration-300 group-hover:w-24" />
-
-            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 transition group-hover:text-blue-600">
-              VISION
-            </h2>
-
-            <p className="text-[15px] md:text-[16px] leading-[1.9] text-gray-700">
-              Our vision, "Produce Green to Live Green," is to lead the global transition to net-zero emissions. We are committed to creating and introducing world-class renewable energy solutions that eliminate reliance on fossil fuels, ensuring a sustainable future for generations to come.
-            </p>
-
+          
+          <h2 className="text-2xl font-bold text-blue-600 mb-4">{title}</h2>
+          <p className="text-[16px] leading-[1.8] text-gray-700">
+            {content}
+          </p>
+          
+          <div className="mt-6 flex items-center gap-2 text-blue-600 font-bold text-sm">
+            <span>OUR COMMITMENT</span>
+            <div className="h-px flex-1 bg-blue-100" />
           </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
 
+const LegacySection = () => {
+  const textVariants: Variants = {
+    offscreen: { y: 30, opacity: 0 },
+    onscreen: { y: 0, opacity: 1, transition: { duration: 0.6 } }
+  };
+
+  const cardEntranceVariants: Variants = {
+    offscreen: { y: 50, opacity: 0 },
+    onscreen: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { type: "spring", bounce: 0.4, duration: 0.8 } 
+    }
+  };
+
+  return (
+    <section className="py-4 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
+        
+        {/* HEADER */}
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <motion.h4 variants={textVariants} className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 mb-3">
+            Our Legacy
+          </motion.h4>
+          <motion.h2 variants={textVariants} className="text-4xl md:text-5xl font-black text-slate-900">
+            How We <span className="text-blue-600">Started</span>
+          </motion.h2>
+        </motion.div>
+
+        {/* FLIP CARDS GRID */}
+        <div className="grid md:grid-cols-2 gap-10">
+          <FlipCard 
+            title="Mission"
+            image="https://img.theweek.in/content/dam/week/magazine/the-week/Current-affairs/2017/june/image/42-Gujarat-Solar-Park.jpg"
+            cardVariants={cardEntranceVariants}
+            content="To provide the most advanced cutting-edge technological and innovative solutions for a sustainable future. To empower our skilled workforce through knowledge sharing, associations, and collaborations to help society embrace the change of energy transition."
+          />
+          
+          <FlipCard 
+            title="Vision"
+            image="https://imagevision.ai/wp-content/uploads/2023/11/Solar-Panel-Inspections.jpg"
+            cardVariants={cardEntranceVariants}
+            content='Our vision, "Produce Green to Live Green," is to lead the global transition to net-zero emissions. We are committed to creating and introducing world-class renewable energy solutions that eliminate reliance on fossil fuels.'
+          />
         </div>
 
       </div>

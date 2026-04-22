@@ -1,137 +1,140 @@
-import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Linkedin, Instagram, Youtube, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Linkedin, Instagram, Youtube, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const offices = [
-  { 
-    city: "Mumbai Branch", 
-    addr: "Unit 304, Business Park, Andheri East, Mumbai, Maharashtra 400069", 
+  {
+    city: "Mumbai",
+    addr: "Andheri East, Mumbai, Maharashtra",
     phone: "+91-22-6789 4321",
-    label: "Sales & Support"
+    tag: "Financial Hub"
   },
-  { 
-    city: "Ahmedabad Branch", 
-    addr: "102, Solar Plaza, SG Highway, Ahmedabad, Gujarat 380054", 
+  {
+    city: "Ahmedabad",
+    addr: "SG Highway, Ahmedabad, Gujarat",
     phone: "+91-79-4567 8901",
-    label: "Regional Operations"
+    tag: "Industrial Center"
   },
 ];
 
 const OfficeDetails = () => {
   return (
-    <div className="space-y-12">
-       {/* HQ */}
-       <motion.div 
-         initial={{ opacity: 0, x: -30 }}
-         whileInView={{ opacity: 1, x: 0 }}
-         viewport={{ once: true }}
-         className="p-10 md:p-14 bg-white rounded-[48px] text-slate-900 shadow-2xl relative overflow-hidden border border-slate-100 group"
-       >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full -mr-20 -mt-20 blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
-          <MapPin className="absolute -bottom-10 -right-10 opacity-[0.03] rotate-12" size={240} />
+    <section className="py-32 bg-[#fafafa] relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-[120px] -z-10" />
+
+      <div className="max-w-7xl mx-auto px-6">
+        
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
           
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full mb-8">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></div>
-              <span className="text-blue-600 font-black uppercase tracking-widest text-[9px]">Registered HQ</span>
-            </div>
+          {/* LEFT - PRIMARY HQ PANEL (Spans 5 cols) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="lg:col-span-5 bg-white rounded-[2.5rem] p-10 shadow-2xl shadow-blue-900/5 border border-slate-100 relative overflow-hidden"
+          >
+            {/* Subtle Gradient Accent */}
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-600 to-cyan-400" />
             
-            <h3 className="text-4xl font-heading font-black text-slate-900 mb-8 uppercase tracking-tight">Corporate Office</h3>
-            
-            <div className="grid md:grid-cols-2 gap-10">
-              <div className="space-y-8">
-                <div className="flex gap-5 group/item">
-                   <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-blue-600 group-hover/item:bg-blue-600 group-hover/item:text-white transition-all shadow-sm">
-                    <MapPin size={22} />
-                   </div>
-                   <div>
-                     <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Our Address</p>
-                     <p className="text-slate-600 leading-relaxed font-semibold text-base max-w-[280px]">
-                       802, 8th Floor, Crown Heights, Sector 10, Rohini, New Delhi, Delhi 110085
-                     </p>
-                   </div>
-                </div>
-                <div className="flex gap-5 group/item">
-                   <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-blue-600 group-hover/item:bg-blue-600 group-hover/item:text-white transition-all shadow-sm">
-                    <Phone size={22} />
-                   </div>
-                   <div>
-                     <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Phone Line</p>
-                     <p className="text-xl font-black text-slate-900 tracking-tight">+91-11-4118 3116 / 17</p>
-                   </div>
-                </div>
-              </div>
+            <span className="inline-block px-4 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-widest mb-6">
+              Official Headquarters
+            </span>
 
-              <div className="space-y-8">
-                <div className="flex gap-5 group/item">
-                   <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-blue-600 group-hover/item:bg-blue-600 group-hover/item:text-white transition-all shadow-sm">
-                    <Mail size={22} />
-                   </div>
-                   <div>
-                     <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Email Us</p>
-                     <p className="text-xl font-black text-slate-900 tracking-tight hover:text-blue-600 cursor-pointer transition-colors">info@solarreios.com</p>
-                   </div>
+            <h2 className="text-4xl font-black text-slate-900 mb-8 leading-tight">
+              Corporate <br /> <span className="text-blue-600">Operations</span>
+            </h2>
+
+            <div className="space-y-8">
+              {[
+                { icon: MapPin, label: "Address", value: "802, Crown Heights, Rohini, New Delhi – 110085" },
+                { icon: Phone, label: "Direct Line", value: "+91-11-4118 3116 / 17", color: "text-blue-600 font-bold" },
+                { icon: Mail, label: "Inquiries", value: "info@solarreios.com" },
+                { icon: Clock, label: "Working Hours", value: "Mon–Sat, 9 AM – 6 PM" },
+              ].map((item, idx) => (
+                <div key={idx} className="group flex gap-5">
+                  <div className="shrink-0 w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <item.icon size={20} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase font-bold text-slate-400 tracking-tighter mb-1">{item.label}</p>
+                    <p className={`text-slate-700 leading-relaxed ${item.color || ''}`}>{item.value}</p>
+                  </div>
                 </div>
-                <div className="flex gap-5 group/item">
-                   <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-blue-600 group-hover/item:bg-blue-600 group-hover/item:text-white transition-all shadow-sm">
-                    <Clock size={22} />
-                   </div>
-                   <div>
-                     <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Working Hours</p>
-                     <p className="text-slate-600 font-bold">Mon–Sat, 9:00 AM – 6:00 PM</p>
-                     <p className="text-[10px] text-slate-400 mt-1">Closed on Sundays & Public Holidays</p>
-                   </div>
-                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* RIGHT - BRANCH BENTO GRID (Spans 7 cols) */}
+          <div className="lg:col-span-7 space-y-8">
+            <div className="flex items-center gap-4 mb-4">
+              <h3 className="text-xl font-bold text-slate-900">Regional Centers</h3>
+              <div className="h-[1px] flex-1 bg-slate-200" />
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {offices.map((office, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: i * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  className="group p-8 bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 relative"
+                >
+                  <div className="absolute top-6 right-6 text-slate-200 group-hover:text-blue-100 transition-colors">
+                    <ArrowUpRight size={24} />
+                  </div>
+                  
+                  <span className="text-[10px] font-bold text-blue-500/60 uppercase mb-2 block">{office.tag}</span>
+                  <h4 className="text-2xl font-black text-slate-900 mb-4">{office.city}</h4>
+                  
+                  <div className="space-y-4">
+                    <p className="text-sm text-slate-500 leading-relaxed">{office.addr}</p>
+                    <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
+                      <Phone size={14} className="text-blue-600" />
+                      {office.phone}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+              
+              {/* Optional Empty Slot for "Future Growth" or a CTA */}
+              <div className="p-8 border-2 border-dashed border-slate-200 rounded-[2rem] flex flex-col items-center justify-center text-center opacity-50">
+                 <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Global Expansion</p>
+                 <p className="text-sm text-slate-400 mt-1">Coming Soon to UAE</p>
               </div>
             </div>
-          </div>
-       </motion.div>
 
-       {/* Branch Offices */}
-       <div className="grid sm:grid-cols-2 gap-8">
-          {offices.map((office, idx) => (
+            {/* CONNECTIVITY / SOCIAL DOCK */}
             <motion.div 
-              key={idx} 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="p-10 bg-white rounded-[40px] border border-slate-100 shadow-xl hover:shadow-2xl transition-all group overflow-hidden relative"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              className="mt-12 bg-slate-900 rounded-[2rem] p-8 flex flex-col md:flex-row items-center justify-between gap-8"
             >
-               <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-[60px] opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-               <span className="text-[9px] font-black text-blue-600 uppercase tracking-[0.3em] mb-4 block">{office.label}</span>
-               <h5 className="font-heading font-black text-2xl text-slate-900 mb-4 uppercase tracking-tight flex items-center gap-2">
-                 {office.city}
-                 <ArrowRight size={18} className="translate-x-[-10px] opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all text-blue-600" />
-               </h5>
-               <p className="text-sm text-slate-500 mb-6 font-medium leading-relaxed">{office.addr}</p>
-               <p className="text-base font-black text-slate-900 tracking-tight flex items-center gap-2">
-                 <Phone size={16} className="text-blue-600" />
-                 {office.phone}
-               </p>
-            </motion.div>
-          ))}
-       </div>
+              <div className="text-center md:text-left">
+                <h4 className="text-white font-bold text-lg">Digital Ecosystem</h4>
+                <p className="text-slate-400 text-sm mt-1">Follow our journey across platforms</p>
+              </div>
 
-       {/* Socials */}
-       <motion.div 
-         initial={{ opacity: 0, y: 30 }}
-         whileInView={{ opacity: 1, y: 0 }}
-         viewport={{ once: true }}
-         className="p-10 bg-[#F8FAFC] border border-slate-100 rounded-[40px] flex flex-col lg:flex-row items-center justify-between gap-10"
-       >
-          <div className="text-center lg:text-left">
-            <h5 className="font-black text-slate-900 text-lg uppercase tracking-tight mb-1">Join the Solar Community</h5>
-            <p className="text-slate-400 font-medium text-sm">Stay Updated with latest green energy innovations</p>
+              <div className="flex gap-3">
+                {[Facebook, Twitter, Linkedin, Instagram, Youtube].map((Icon, i) => (
+                  <motion.a
+                    key={i}
+                    whileHover={{ scale: 1.1, y: -4 }}
+                    whileTap={{ scale: 0.9 }}
+                    href="#"
+                    className="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300"
+                  >
+                    <Icon size={20} />
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
           </div>
-          <div className="flex flex-wrap justify-center gap-4">
-             {[Facebook, Twitter, Linkedin, Instagram, Youtube].map((Icon, idx) => (
-               <a key={idx} href="#" className="w-14 h-14 rounded-2xl bg-white border border-slate-200/60 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-sm hover:shadow-lg hover:shadow-blue-200 active:scale-95">
-                 <Icon size={24} />
-               </a>
-             ))}
-          </div>
-       </motion.div>
-    </div>
+
+        </div>
+
+      </div>
+    </section>
   );
 };
 

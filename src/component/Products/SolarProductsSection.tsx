@@ -70,7 +70,7 @@ const SolarProductsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.15 }}
               whileHover={{ y: -10 }}
-              className="relative group p-8 rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-xl transition-all"
+              className="relative group p-8 rounded-2xl border border-gray-400 bg-white shadow-sm hover:shadow-xl transition-all"
             >
               {/* GLOW HOVER */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.glow} opacity-0 group-hover:opacity-100 transition`} />
@@ -102,8 +102,6 @@ const SolarProductsSection = () => {
             </motion.div>
           ))}
         </div>
-
-   
 
       </div>
     </section>
