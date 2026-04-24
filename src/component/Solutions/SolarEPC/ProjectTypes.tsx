@@ -2,45 +2,81 @@ import { motion } from "framer-motion";
 import { Home, Building2, Factory, Landmark } from "lucide-react";
 
 const types = [
-  { title: "Residential", capacity: "3kW - 10kW", icon: <Home />, desc: "Reduce your home electricity bills by up to 90%." },
-  { title: "Commercial", capacity: "10kW - 100kW", icon: <Building2 />, desc: "Lower operational costs for offices and showrooms." },
-  { title: "Industrial", capacity: "100kW - 1MW+", icon: <Factory />, desc: "MW scale solutions for factories and cold storage." },
-  { title: "Government", capacity: "Institutional", icon: <Landmark />, desc: "Public sector energy transition projects." },
+  {
+    title: "Residential",
+    capacity: "3kW - 10kW",
+    icon: <Home size={28} />,
+    desc: "Reduce electricity bills for homes.",
+  },
+  {
+    title: "Commercial",
+    capacity: "10kW - 100kW",
+    icon: <Building2 size={28} />,
+    desc: "Lower energy costs for businesses.",
+  },
+  {
+    title: "Industrial",
+    capacity: "100kW - 1MW+",
+    icon: <Factory size={28} />,
+    desc: "High-capacity solutions for factories.",
+  },
+  {
+    title: "Government",
+    capacity: "Institutional",
+    icon: <Landmark size={28} />,
+    desc: "Solar projects for public sector.",
+  },
 ];
 
 const ProjectTypes = () => {
-  const fadeIn = {
-    initial: { opacity: 0, y: 30 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.6 }
-  };
-
   return (
-    <section className="py-24 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="text-center mb-16">
-          <p className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2">Versatile Expertise</p>
-          <h2 className="text-4xl font-heading font-black text-slate-900">EPC Project Types</h2>
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* HEADER */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#000000]">
+            EPC Project Types
+          </h2>
+          <p className="text-slate-500 mt-3">
+            Solutions tailored for every energy need
+          </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* CARDS */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {types.map((type, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
-              {...fadeIn}
-              whileHover={{ y: -10 }}
-              className="p-10 bg-white rounded-[40px] text-center shadow-xl shadow-slate-200/50 border border-slate-100 group transition-all"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className="border border-slate-600/40 rounded-xl p-6 hover:shadow-md shadow-sm shadow-black transition"
             >
-              <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center mx-auto mb-8 text-blue-600 text-4xl group-hover:bg-blue-600 group-hover:text-white transition-colors border border-slate-100 shadow-sm">
+              {/* ICON */}
+              <div className="w-12 h-12 flex items-center justify-center bg-[#1E559D]/10 text-[#1E559D] rounded-lg mb-4">
                 {type.icon}
               </div>
-              <h4 className="text-2xl font-black font-heading text-slate-900 mb-2">{type.title}</h4>
-              <p className="text-blue-600 font-black text-xs uppercase tracking-widest mb-4">{type.capacity}</p>
-              <p className="text-slate-500 text-sm font-medium leading-relaxed">{type.desc}</p>
+
+              {/* TITLE */}
+              <h3 className="text-lg font-semibold text-[#000000]">
+                {type.title}
+              </h3>
+
+              {/* CAPACITY */}
+              <p className="text-sm text-[#1E559D] font-medium mt-1">
+                {type.capacity}
+              </p>
+
+              {/* DESC */}
+              <p className="text-sm text-slate-500 mt-3">
+                {type.desc}
+              </p>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/logo.png"
 import {
   ChevronDown,
   Menu,
@@ -57,7 +58,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 left-0 w-full z-50">
       {/* Top Bar / Stock Ticker */}
-      <div className="bg-slate-900 text-white text-[10px] py-2 px-4 md:px-8 hidden md:block border-b border-white/5 uppercase tracking-widest font-black">
+      <div className="bg-[#000000] text-white text-[10px] py-2 px-4 md:px-8 hidden md:block border-b border-white/5 uppercase tracking-widest font-black">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6 overflow-hidden">
             {stockTicker.map((item, idx) => (
@@ -70,13 +71,13 @@ const Header = () => {
             ))}
           </div>
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 hover:text-blue-400 transition-colors cursor-pointer">
-              <Phone size={12} className="text-blue-500" />
+            <div className="flex items-center gap-2 hover:text-[#1E559D] transition-colors cursor-pointer">
+              <Phone size={12} className="text-[#1E559D]" />
               <span>+91-11-4118 3116</span>
             </div>
             <div className="flex items-center gap-4 border-l border-white/10 pl-6 text-slate-400">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                <a key={i} href="#" className="hover:text-blue-400 transition-colors"><Icon size={12} /></a>
+                <a key={i} href="#" className="hover:text-[#1E559D] transition-colors"><Icon size={12} /></a>
               ))}
             </div>
           </div>
@@ -90,22 +91,16 @@ const Header = () => {
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-              <Zap className="text-white" size={24} fill="white" />
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span className="font-heading font-black text-xl tracking-tighter text-slate-900">SOLARREIOS</span>
-              <span className="text-[10px] font-black text-blue-600 tracking-[3px] uppercase">Powering India</span>
-            </div>
+          <Link to="/" className="flex items-center  group">
+            <img src={logo} alt="" className="h-15" />
           </Link>
 
           {/* Desktop Nav */}
-          <ul className="hidden lg:flex items-center gap-8 font-heading text-[11px] font-black uppercase tracking-[0.2em] text-slate-900">
+          <ul className="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-800">
             {navLinks.map((link, idx) => (
               <li key={idx} className="relative group">
                 {link.dropdown ? (
-                  <div className="flex items-center gap-1 cursor-pointer py-2 hover:text-blue-600 transition-colors group">
+                  <div className="flex items-center gap-1 cursor-pointer py-2 hover:text-[#1E559D] transition-colors group">
                     {link.title} <ChevronDown size={14} className="group-hover:rotate-180 transition-transform" />
                     <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                       <div className="bg-white shadow-2xl rounded-3xl border border-slate-100 w-64 py-4 overflow-hidden">
@@ -113,7 +108,7 @@ const Header = () => {
                           <Link
                             key={sidx}
                             to={sub.path}
-                            className={`block px-8 py-4 hover:bg-slate-50 hover:text-blue-600 transition-colors font-bold normal-case text-sm ${location.pathname === sub.path ? "text-blue-600 bg-blue-50" : "text-slate-600"
+                            className={`block px-8 py-4 hover:bg-slate-50 hover:text-[#1E559D] transition-colors font-bold normal-case text-sm ${location.pathname === sub.path ? "text-[#1E559D] bg-[#1E559D]/5" : "text-slate-600"
                               }`}
                           >
                             {sub.title}
@@ -125,9 +120,9 @@ const Header = () => {
                 ) : (
                   <Link
                     to={link.path}
-                    className={`py-2 transition-all relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-blue-600 after:transition-all ${location.pathname === link.path
-                      ? "text-blue-600 after:w-full"
-                      : "hover:text-blue-600 after:w-0 hover:after:w-full"
+                    className={`py-2 transition-all relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#1E559D] after:transition-all ${location.pathname === link.path
+                      ? "text-[#1E559D] after:w-full"
+                      : "hover:text-[#1E559D] after:w-0 hover:after:w-full"
                       }`}
                   >
                     {link.title}
@@ -137,7 +132,7 @@ const Header = () => {
             ))}
             <Link
               to="/contact"
-              className="bg-blue-600 text-white px-10 py-4 rounded-2xl hover:bg-slate-900 transition-all shadow-xl shadow-blue-200 active:scale-95 text-[11px] font-black uppercase tracking-widest"
+              className="bg-[#1E559D] text-white px-10 py-4 rounded-2xl hover:bg-[#000000] transition-all shadow-xl shadow-[#1E559D]/30 active:scale-95 text-[11px] font-black uppercase tracking-widest"
             >
               Get Free Quote
             </Link>
@@ -145,7 +140,7 @@ const Header = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden text-slate-900 p-2"
+            className="lg:hidden text-[#000000] p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -161,25 +156,25 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed inset-0 bg-white z-[60] lg:hidden flex flex-col p-8"
+            className="fixed inset-0 bg-white z-60 lg:hidden flex flex-col p-8"
           >
             <div className="flex justify-between items-center mb-12">
               <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center">
+                <div className="w-10 h-10 bg-[#000000] rounded-xl flex items-center justify-center">
                   <Zap className="text-white" size={24} fill="white" />
                 </div>
-                <span className="font-heading font-black text-xl text-slate-900">SOLARREIOS</span>
+                <span className="font-heading font-black text-xl text-[#000000]">SOLARREIOS</span>
               </Link>
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="p-3 bg-slate-50 rounded-2xl text-slate-900"
+                className="p-3 bg-slate-50 rounded-2xl text-[#000000]"
               >
                 <X size={24} />
               </button>
             </div>
 
-            <nav className="flex-grow">
-              <ul className="space-y-6 text-2xl font-heading font-black text-slate-900 uppercase tracking-tighter">
+            <nav className="grow">
+              <ul className="space-y-6 text-2xl font-heading font-black text-[#000000] uppercase tracking-tighter">
                 {navLinks.map((link, idx) => (
                   <li key={idx}>
                     {link.dropdown ? (
@@ -188,7 +183,7 @@ const Header = () => {
                           onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
                           className="flex items-center justify-between w-full"
                         >
-                          {link.title} <ChevronDown className={`transition-transform duration-300 ${isSolutionsOpen ? "rotate-180 text-blue-600" : ""}`} />
+                          {link.title} <ChevronDown className={`transition-transform duration-300 ${isSolutionsOpen ? "rotate-180 text-[#1E559D]" : ""}`} />
                         </button>
                         <AnimatePresence>
                           {isSolutionsOpen && (
@@ -229,7 +224,7 @@ const Header = () => {
               <Link
                 to="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="bg-blue-600 text-white text-center py-5 rounded-3xl font-black text-xl shadow-2xl shadow-blue-300"
+                className="bg-[#1E559D] text-white text-center py-5 rounded-3xl font-black text-xl shadow-2xl shadow-[#1E559D]/40"
               >
                 Get Free Quote
               </Link>

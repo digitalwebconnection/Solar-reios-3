@@ -1,80 +1,82 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, ShieldCheck } from "lucide-react";
-import { Link } from "react-router-dom";
+import { CheckCircle2} from "lucide-react";
+
 
 const EPCServices = () => {
-  const fadeIn = {
-    initial: { opacity: 0, y: 30 },
+  const fadeUp = {
+    initial: { opacity: 0, y: 60 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.8 }
   };
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-24">
+    <section className="py-28 bg-linear-to-b from-white via-slate-50 to-white relative overflow-hidden">
+
+      {/* BACKGROUND GLOW */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-[#1E559D]/100/20 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-purple-500/20 blur-[120px] rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto px-6 space-y-32 relative z-10">
+
+        {/* SECTION 1 */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeIn}>
-              <p className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2">Simplified Solutions</p>
-              <h2 className="text-4xl font-heading font-black text-slate-900 mb-8">What is Solar EPC?</h2>
-              <div className="space-y-6 text-slate-500 text-lg leading-relaxed">
-                <p>
-                  Engineering, Procurement, and Construction (EPC) is a turnkey solution where we handle 
-                  every aspect of your solar journey. From initial feasibility to final grid connection.
-                </p>
-                <ul className="space-y-4">
-                  {[
-                    "Customized Engineering for maximum yield",
-                    "Tier-1 Procurement from trusted partners",
-                    "Safety-first Construction by experts",
-                    "Grid Integration & Commissioning"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="text-blue-600 shrink-0 mt-1" size={20} />
-                      <span className="text-slate-700 font-medium">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-            <motion.div {...fadeIn} className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1548337138-e87d889cc988?auto=format&fit=crop&q=80&w=1000" 
-                className="rounded-[48px] shadow-2xl h-[450px] w-full object-cover border border-slate-100"
-                alt="Solar Engineering"
-              />
-            </motion.div>
+
+          {/* TEXT */}
+          <motion.div {...fadeUp}>
+
+            <h2 className="text-02xl md:text-4xl font-black text-[#000000] mb-6 leading-tight">
+              Complete Solar EPC <br />
+              <span className="text-[#1E559D]">From Concept to Connection</span>
+            </h2>
+
+            <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-xl">
+              We manage your entire solar journey Ã¢â‚¬â€ design, procurement, installation,
+              and commissioning Ã¢â‚¬â€ ensuring maximum ROI and zero hassle.
+            </p>
+
+            <div className="space-y-4">
+              {[
+                "Custom system design for maximum output",
+                "Tier-1 solar components & trusted sourcing",
+                "Safe & efficient installation process",
+                "Grid connection & full commissioning"
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-center gap-3 group"
+                >
+                  <CheckCircle2 className="text-[#1E559D] group-hover:scale-110 transition" />
+                  <span className="text-slate-800 font-medium">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* IMAGE WITH EFFECT */}
+          <motion.div {...fadeUp} className="relative group">
+
+            {/* GLOW BORDER */}
+            <div className="absolute -inset-1 bg-linear-to-r from-blue-500 to-blue-500 rounded-[40px] blur opacity-30 group-hover:opacity-60 transition"></div>
+
+            <img
+              src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop"
+              alt="Solar EPC"
+              className="relative rounded-xl shadow-2xl h-120 w-full object-cover"
+            />
+
+            {/* FLOATING BADGE */}
+            <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-5 py-3 rounded-xl shadow-lg">
+              <p className="text-sm font-bold text-[#000000]">25+ Years Performance</p>
+              <p className="text-xs text-slate-500">Guaranteed Output</p>
+            </div>
+          </motion.div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-             <motion.div {...fadeIn} className="bg-slate-900 p-12 rounded-[48px] text-white shadow-2xl order-2 lg:order-1 relative overflow-hidden">
-                <ShieldCheck className="text-blue-400 w-16 h-16 mb-8 relative z-10" />
-                <h3 className="text-3xl font-heading font-black mb-6 relative z-10">Quality Guarantee</h3>
-                <p className="text-slate-400 text-lg mb-10 leading-relaxed relative z-10">
-                  We use only Tier-1 components and follow international safety standards, 
-                  ensuring your solar plant performs optimally for 25+ years.
-                </p>
-                <Link to="/contact" className="text-blue-400 font-bold flex items-center gap-2 group relative z-10 uppercase tracking-widest text-sm">
-                  Contact Our Engineers
-                </Link>
-             </motion.div>
-             <motion.div {...fadeIn} className="order-1 lg:order-2">
-               <h2 className="text-4xl font-heading font-black text-slate-900 mb-8">Why Our EPC?</h2>
-               <div className="grid sm:grid-cols-2 gap-6">
-                 {[
-                   { title: "Turnkey Solution", desc: "Start to finish" },
-                   { title: "On-time Delivery", desc: "Rigid timelines" },
-                   { title: "Post Support", desc: "24/7 Monitoring" },
-                   { title: "Certified Experts", desc: "MNRE Approved" },
-                 ].map((box, i) => (
-                   <div key={i} className="bg-slate-50 p-8 rounded-3xl border border-slate-100 group hover:border-blue-600 transition-all shadow-sm">
-                     <span className="font-black text-slate-900 block mb-1 group-hover:text-blue-600 transition-colors uppercase tracking-tight">{box.title}</span>
-                     <p className="text-xs text-slate-400 font-bold uppercase">{box.desc}</p>
-                   </div>
-                 ))}
-               </div>
-             </motion.div>
-        </div>
+   
       </div>
     </section>
   );

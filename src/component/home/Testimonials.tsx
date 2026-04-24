@@ -43,7 +43,7 @@ const Testimonials: React.FC = () => {
               className="bg-white p-6 rounded-lg shadow-sm border border-gray-200"
             >
               <p className="text-gray-700 text-sm mb-4">
-                “{item.review}”
+                Ã¢â‚¬Å“{item.review}Ã¢â‚¬Â
               </p>
 
               <div>

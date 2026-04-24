@@ -1,43 +1,120 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Upload, Send } from "lucide-react";
 
 const AppForm = () => {
-  const fadeIn = {
-    initial: { opacity: 0, y: 30 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.6 }
+  const [fileName, setFileName] = useState("");
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) setFileName(file.name);
   };
 
   return (
-    <section className="py-24 bg-slate-50">
-      <div className="max-w-4xl mx-auto px-4">
-         <motion.div {...fadeIn} className="bg-white rounded-[48px] shadow-2xl p-10 md:p-16 border border-slate-100">
-            <h3 className="text-3xl font-heading font-black text-slate-900 mb-12 text-center uppercase tracking-tight">Express Interest</h3>
-            <form className="grid md:grid-cols-2 gap-8">
-               <div className="space-y-6">
-                  <input type="text" placeholder="Full Name *" className="w-full bg-slate-50 border border-slate-100 p-5 rounded-2xl font-bold outline-none focus:ring-2 focus:ring-blue-600/20 text-slate-700" required />
-                  <input type="email" placeholder="Email Address *" className="w-full bg-slate-50 border border-slate-100 p-5 rounded-2xl font-bold outline-none focus:ring-2 focus:ring-blue-600/20 text-slate-700" required />
-                  <input type="tel" placeholder="Phone Number *" className="w-full bg-slate-50 border border-slate-100 p-5 rounded-2xl font-bold outline-none focus:ring-2 focus:ring-blue-600/20 text-slate-700" required />
-               </div>
-               <div className="space-y-6">
-                  <select className="w-full bg-slate-50 border border-slate-100 p-5 rounded-2xl font-bold outline-none text-slate-500">
-                     <option>Select Department</option>
-                     <option>Operations</option>
-                     <option>Sales</option>
-                     <option>Engineering</option>
-                  </select>
-                  <label className="flex items-center gap-4 bg-slate-50 border-2 border-dashed border-slate-200 p-5 rounded-2xl cursor-pointer hover:border-blue-600 transition-all group">
-                    <Upload className="text-slate-400 group-hover:text-blue-600 transition-colors" />
-                    <span className="text-slate-400 font-bold group-hover:text-slate-700 transition-colors">Upload Resume (PDF)</span>
-                    <input type="file" className="hidden" />
-                  </label>
-                  <button className="w-full bg-blue-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-3 shadow-xl hover:bg-slate-900 transition-all">
-                     <Send size={20} /> Submit Application
-                  </button>
-               </div>
-            </form>
-         </motion.div>
+    <section className="py-8 bg-slate-50">
+      <div className="max-w-4xl mx-auto px-6">
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="bg-white  "
+        >
+
+          {/* HEADER */}
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#000000]">
+              Apply for a Position
+            </h2>
+            <p className="text-slate-500 mt-2">
+              Fill out the form and our team will get back to you.
+            </p>
+          </div>
+
+          {/* FORM */}
+          <form className="space-y-8">
+
+            {/* ROW 1 */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <input
+                type="text"
+                placeholder="Full Name *"
+                className="w-full border border-slate-200 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+
+              <input
+                type="email"
+                placeholder="Email Address *"
+                className="w-full border border-slate-200 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            {/* ROW 2 */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <input
+                type="tel"
+                placeholder="Phone Number *"
+                className="w-full border border-slate-200 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+
+              <select
+                className="w-full border border-slate-200 rounded-lg p-4 text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#1E559D]"
+              >
+                <option>Select Department</option>
+                <option>Operations</option>
+                <option>Sales</option>
+                <option>Engineering</option>
+                <option>Marketing</option>
+              </select>
+            </div>
+
+            {/* MESSAGE */}
+            <textarea
+      
+              placeholder="Why should we hire you?"
+              className="w-full border border-slate-200 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ></textarea>
+
+            {/* RESUME UPLOAD */}
+            <div>
+              <label className="block text-sm font-medium text-slate-600 mb-2">
+                Upload Resume (PDF)
+              </label>
+
+              <label className="flex items-center justify-between border-2 border-dashed border-slate-300 rounded-lg p-4 cursor-pointer hover:border-[#1E559D] transition">
+                <div className="flex items-center gap-3 text-slate-500">
+                  <Upload size={18} />
+                  <span>
+                    {fileName ? fileName : "Choose file or drag & drop"}
+                  </span>
+                </div>
+
+                <span className="text-xs text-slate-400">
+                  PDF only
+                </span>
+
+                <input
+                  type="file"
+                  accept=".pdf"
+                  onChange={handleFileChange}
+                  className="hidden"
+                />
+              </label>
+            </div>
+
+            {/* CTA */}
+            <button
+              type="submit"
+              className="w-full bg-[#1E559D] hover:bg-[#153A7A] text-white py-4 rounded-full font-semibold flex items-center justify-center gap-2 transition"
+            >
+              Submit Application <Send size={18} />
+            </button>
+
+          </form>
+
+        </motion.div>
       </div>
     </section>
   );

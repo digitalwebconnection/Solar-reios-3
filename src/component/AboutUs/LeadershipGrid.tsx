@@ -33,7 +33,7 @@ const LeadershipGrid = () => {
             <motion.span 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="text-blue-600 font-bold tracking-[0.3em] text-xs uppercase block mb-3"
+              className="text-[#1E559D] font-bold tracking-[0.3em] text-xs uppercase block mb-3"
             >
               The Executive Team
             </motion.span>
@@ -41,9 +41,9 @@ const LeadershipGrid = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-black text-slate-900 leading-tight"
+              className="text-4xl md:text-5xl font-black text-[#000000] leading-tight"
             >
-              Guided by <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Visionaries.</span>
+              Guided by <span className="text-transparent bg-clip-text bg-linear-to-r from-[#1E559D] to-cyan-500">Visionaries.</span>
             </motion.h2>
           </div>
           <motion.p 
@@ -64,7 +64,7 @@ const LeadershipGrid = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="group relative h-[450px] rounded-3xl overflow-hidden shadow-2xl bg-slate-200"
+              className="group relative h-112.5 rounded-3xl overflow-hidden shadow-2xl bg-slate-200"
             >
               {/* Image with Parallax-like scale */}
               <img
@@ -74,24 +74,24 @@ const LeadershipGrid = () => {
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+              <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 
               {/* Static Content (Always visible) */}
               <div className="absolute bottom-0 left-0 w-full p-8 transition-transform duration-500 transform group-hover:-translate-y-24">
                 <h4 className="text-2xl font-bold text-white mb-1">{leader.name}</h4>
-                <p className="text-blue-400 font-medium text-sm uppercase tracking-wider">{leader.role}</p>
+                <p className="text-[#1E559D] font-medium text-sm uppercase tracking-wider">{leader.role}</p>
                 
                 {/* Social Icons */}
                 <div className="flex gap-4 mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100">
-                  <Linkedin size={18} className="text-white hover:text-blue-400 cursor-pointer transition-colors" />
-                  <Twitter size={18} className="text-white hover:text-blue-400 cursor-pointer transition-colors" />
-                  <Mail size={18} className="text-white hover:text-blue-400 cursor-pointer transition-colors" />
+                  <Linkedin size={18} className="text-white hover:text-[#1E559D] cursor-pointer transition-colors" />
+                  <Twitter size={18} className="text-white hover:text-[#1E559D] cursor-pointer transition-colors" />
+                  <Mail size={18} className="text-white hover:text-[#1E559D] cursor-pointer transition-colors" />
                 </div>
               </div>
 
               {/* Hidden Content (Reveals on hover) */}
               <div className="absolute bottom-0 left-0 w-full p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                <div className="h-[2px] w-12 bg-blue-500 mb-4" />
+                <div className="h-0.5 w-12 bg-[#1E559D]/100 mb-4" />
                 <p className="text-slate-300 text-sm leading-relaxed">
                   {leader.bio}
                 </p>

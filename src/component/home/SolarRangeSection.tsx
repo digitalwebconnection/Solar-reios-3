@@ -36,7 +36,7 @@ const SolarSolutions = () => {
                 continuous power supply.
               </p>
 
-              <button className="bg-blue-600 text-white text-sm px-4 py-2 rounded">
+              <button className="bg-[#1E559D] text-white text-sm px-4 py-2 rounded">
                 Enquiry Now
               </button>
             </div>
@@ -68,7 +68,7 @@ const SolarSolutions = () => {
                 power supply.
               </p>
 
-              <button className="bg-blue-600 text-white text-sm px-4 py-2 rounded">
+              <button className="bg-[#1E559D] text-white text-sm px-4 py-2 rounded">
                 Enquiry Now
               </button>
             </div>
@@ -99,7 +99,7 @@ const SolarSolutions = () => {
                 Offers higher efficiency and flexibility in panel positioning.
               </p>
 
-              <button className="bg-blue-600 text-white text-sm px-4 py-2 rounded">
+              <button className="bg-[#1E559D] text-white text-sm px-4 py-2 rounded">
                 Enquiry Now
               </button>
             </div>

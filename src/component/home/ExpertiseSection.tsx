@@ -45,7 +45,7 @@ const ExpertiseSection = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold mb-2">
-              Our <span className="text-blue-700">Expertise</span>
+              Our <span className="text-[#1E559D]">Expertise</span>
             </h2>
 
             <ul className="space-y-5">
@@ -56,7 +56,7 @@ const ExpertiseSection = () => {
                 >
                   <CheckCircle
                     size={20}
-                    className="text-blue-700 mt-1 group-hover:scale-110 transition"
+                    className="text-[#1E559D] mt-1 group-hover:scale-110 transition"
                   />
                   <span className="leading-relaxed">
                     {point}

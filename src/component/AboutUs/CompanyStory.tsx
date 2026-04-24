@@ -12,11 +12,11 @@ const CompanyStory = () => {
   return (
     <section className="py-24 max-w-7xl mx-auto px-4 md:px-8 grid lg:grid-cols-2 gap-16 items-center">
       <motion.div {...fadeIn}>
-        <div className="flex items-center gap-2 text-blue-600 font-bold mb-4">
+        <div className="flex items-center gap-2 text-[#1E559D] font-bold mb-4">
           <Building2 size={20} />
           <span className="uppercase tracking-widest text-sm">Our Legacy</span>
         </div>
-        <h2 className="text-4xl font-heading font-black text-slate-900 mb-8">Empowering India since 2004</h2>
+        <h2 className="text-4xl font-heading font-black text-[#000000] mb-8">Empowering India since 2004</h2>
         <div className="space-y-6 text-slate-500 text-lg leading-relaxed">
           <p>
             Founded with a mission to simplify power backup, SolarReios has evolved into a leading 
@@ -30,12 +30,12 @@ const CompanyStory = () => {
         </div>
         
         <div className="grid sm:grid-cols-2 gap-8 mt-12">
-          <div className="p-8 bg-slate-50 rounded-3xl border-l-4 border-blue-600">
-            <Target className="text-blue-600 mb-4" size={32} />
-            <h4 className="text-xl font-bold font-heading text-slate-900 mb-2">Our Mission</h4>
+          <div className="p-8 bg-slate-50 rounded-3xl border-l-4 border-[#1E559D]">
+            <Target className="text-[#1E559D] mb-4" size={32} />
+            <h4 className="text-xl font-bold font-heading text-[#000000] mb-2">Our Mission</h4>
             <p className="text-sm text-slate-500">To accelerate sustainable living by providing affordable and efficient clean energy products.</p>
           </div>
-          <div className="p-8 bg-slate-900 rounded-3xl text-white shadow-xl shadow-slate-200">
+          <div className="p-8 bg-[#000000] rounded-3xl text-white shadow-xl shadow-slate-200">
             <Eye className="text-orange-400 mb-4" size={32} />
             <h4 className="text-xl font-bold font-heading mb-2 text-white">Our Vision</h4>
             <p className="text-sm text-slate-400">To be India's most trusted brand for eco-friendly power and electric vehicle charging solutions.</p>

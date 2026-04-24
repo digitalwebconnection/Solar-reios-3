@@ -9,7 +9,7 @@ const QuickActions = () => {
 
         {/* HEADER */}
         <div className="text-center mb-12">
-          <p className="text-sm text-blue-600 font-semibold uppercase tracking-widest">
+          <p className="text-sm text-[#1E559D] font-semibold uppercase tracking-widest">
             Quick Contact
           </p>
 
@@ -27,7 +27,7 @@ const QuickActions = () => {
             whileHover={{ scale: 1.02 }}
             className="flex-1 p-6 flex items-center gap-4 hover:bg-white transition"
           >
-            <div className="w-12 h-12 rounded-lg bg-blue-600 text-white flex items-center justify-center">
+            <div className="w-12 h-12 rounded-lg bg-[#1E559D] text-white flex items-center justify-center">
               <Phone size={20} />
             </div>
 
@@ -43,7 +43,7 @@ const QuickActions = () => {
             whileHover={{ scale: 1.02 }}
             className="flex-1 p-6 flex items-center gap-4 hover:bg-white transition"
           >
-            <div className="w-12 h-12 rounded-lg bg-slate-900 text-white flex items-center justify-center">
+            <div className="w-12 h-12 rounded-lg bg-[#000000] text-white flex items-center justify-center">
               <Mail size={20} />
             </div>
 
@@ -73,8 +73,8 @@ const QuickActions = () => {
 
         {/* CTA BELOW */}
         <div className="text-center mt-10">
-          <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition shadow">
-            Get Free Consultation →
+          <button className="px-6 py-3 bg-[#1E559D] text-white rounded-lg font-semibold hover:bg-[#153A7A] transition shadow">
+            Get Free Consultation Ã¢â€ â€™
           </button>
         </div>
 

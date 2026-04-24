@@ -46,12 +46,12 @@ const TestimonialCard = ({ item }: { item: typeof testimonials[0] }) => (
   <div className="group relative min-w-87.5 max-w-87.5 bg-white border border-slate-400 rounded-3xl p-8 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(37,99,235,0.1)] hover:-translate-y-2">
     {/* Type Badge */}
     <div className="flex justify-between items-start mb-6">
-      <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-wider">
+      <span className="px-3 py-1 rounded-full bg-[#1E559D]/10 text-[#1E559D] text-[10px] font-bold uppercase tracking-wider">
         {item.type}
       </span>
       <div className="flex gap-0.5">
         {[...Array(item.rating)].map((_, i) => (
-          <Star key={i} size={12} fill="#f59e0b" className="text-amber-500" />
+          <Star key={i} size={12} fill="#F9DCAB" className="text-[#F9DCAB]" />
         ))}
       </div>
     </div>
@@ -65,14 +65,14 @@ const TestimonialCard = ({ item }: { item: typeof testimonials[0] }) => (
     <div className="flex items-center gap-4 border-t border-slate-50 pt-6">
       <div className="relative">
         <img src={item.avatar} className="w-12 h-12 rounded-2xl bg-slate-100 object-cover" alt={item.name} />
-        <div className="absolute -bottom-1 -right-1 bg-blue-600 text-white rounded-full p-0.5 border-2 border-white">
+        <div className="absolute -bottom-1 -right-1 bg-[#1E559D] text-white rounded-full p-0.5 border-2 border-white">
           <CheckCircle2 size={10} />
         </div>
       </div>
       <div>
-        <h4 className="text-sm font-bold text-slate-900 flex items-center gap-1">
+        <h4 className="text-sm font-bold text-[#000000] flex items-center gap-1">
           {item.name}
-          <ShieldCheck size={14} className="text-blue-500" />
+          <ShieldCheck size={14} className="text-[#1E559D]" />
         </h4>
         <p className="text-[11px] text-slate-400 font-medium">
           {item.role} @ <span className="text-slate-600">{item.company}</span>
@@ -89,7 +89,7 @@ const TestimonialsSection = () => {
         <motion.span 
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-blue-600 font-bold tracking-[0.2em] text-xs uppercase"
+          className="text-[#1E559D] font-bold tracking-[0.2em] text-xs uppercase"
         >
           Social Proof
         </motion.span>
@@ -97,12 +97,12 @@ const TestimonialsSection = () => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-4xl md:text-5xl font-black text-slate-900 mt-4 mb-6"
+          className="text-4xl md:text-5xl font-black text-[#000000] mt-4 mb-6"
         >
-          Trusted by <span className="text-blue-600">Industry Leaders</span>
+          Trusted by <span className="text-[#1E559D]">Industry Leaders</span>
         </motion.h2>
         <p className="text-slate-500 max-w-2xl mx-auto">
-          From residential rooftops to massive industrial parks, we’ve empowered thousands of clients to make the switch to clean, sustainable energy.
+          From residential rooftops to massive industrial parks, weÃ¢â‚¬â„¢ve empowered thousands of clients to make the switch to clean, sustainable energy.
         </p>
       </div>
 
@@ -111,7 +111,7 @@ const TestimonialsSection = () => {
         {/* Left Mask */}
         <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-linear-to-r from-[#fafafa] to-transparent pointer-events-none" />
         {/* Right Mask */}
-        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-[#fafafa] to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-linear-to-l from-[#fafafa] to-transparent pointer-events-none" />
 
         <motion.div
           className="flex gap-8 py-10 cursor-grab active:cursor-grabbing"

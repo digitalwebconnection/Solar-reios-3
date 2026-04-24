@@ -20,7 +20,7 @@ const OfficeDetails = () => {
   return (
     <section className="py-32 bg-[#fafafa] relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-[120px] -z-10" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#1E559D]/10/50 rounded-full blur-[120px] -z-10" />
 
       <div className="max-w-7xl mx-auto px-6">
         
@@ -33,25 +33,25 @@ const OfficeDetails = () => {
             className="lg:col-span-5 bg-white rounded-[2.5rem] p-10 shadow-2xl shadow-blue-900/5 border border-slate-100 relative overflow-hidden"
           >
             {/* Subtle Gradient Accent */}
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-600 to-cyan-400" />
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#1E559D] to-cyan-400" />
             
-            <span className="inline-block px-4 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-widest mb-6">
+            <span className="inline-block px-4 py-1 rounded-full bg-[#1E559D]/10 text-[#1E559D] text-[10px] font-black uppercase tracking-widest mb-6">
               Official Headquarters
             </span>
 
-            <h2 className="text-4xl font-black text-slate-900 mb-8 leading-tight">
-              Corporate <br /> <span className="text-blue-600">Operations</span>
+            <h2 className="text-4xl font-black text-[#000000] mb-8 leading-tight">
+              Corporate <br /> <span className="text-[#1E559D]">Operations</span>
             </h2>
 
             <div className="space-y-8">
               {[
-                { icon: MapPin, label: "Address", value: "802, Crown Heights, Rohini, New Delhi – 110085" },
-                { icon: Phone, label: "Direct Line", value: "+91-11-4118 3116 / 17", color: "text-blue-600 font-bold" },
+                { icon: MapPin, label: "Address", value: "802, Crown Heights, Rohini, New Delhi Ã¢â‚¬â€œ 110085" },
+                { icon: Phone, label: "Direct Line", value: "+91-11-4118 3116 / 17", color: "text-[#1E559D] font-bold" },
                 { icon: Mail, label: "Inquiries", value: "info@solarreios.com" },
-                { icon: Clock, label: "Working Hours", value: "Mon–Sat, 9 AM – 6 PM" },
+                { icon: Clock, label: "Working Hours", value: "MonÃ¢â‚¬â€œSat, 9 AM Ã¢â‚¬â€œ 6 PM" },
               ].map((item, idx) => (
                 <div key={idx} className="group flex gap-5">
-                  <div className="shrink-0 w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                  <div className="shrink-0 w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#1E559D] group-hover:text-white transition-all duration-300">
                     <item.icon size={20} />
                   </div>
                   <div>
@@ -66,7 +66,7 @@ const OfficeDetails = () => {
           {/* RIGHT - BRANCH BENTO GRID (Spans 7 cols) */}
           <div className="lg:col-span-7 space-y-8">
             <div className="flex items-center gap-4 mb-4">
-              <h3 className="text-xl font-bold text-slate-900">Regional Centers</h3>
+              <h3 className="text-xl font-bold text-[#000000]">Regional Centers</h3>
               <div className="h-[1px] flex-1 bg-slate-200" />
             </div>
 
@@ -84,13 +84,13 @@ const OfficeDetails = () => {
                     <ArrowUpRight size={24} />
                   </div>
                   
-                  <span className="text-[10px] font-bold text-blue-500/60 uppercase mb-2 block">{office.tag}</span>
-                  <h4 className="text-2xl font-black text-slate-900 mb-4">{office.city}</h4>
+                  <span className="text-[10px] font-bold text-[#1E559D]/60 uppercase mb-2 block">{office.tag}</span>
+                  <h4 className="text-2xl font-black text-[#000000] mb-4">{office.city}</h4>
                   
                   <div className="space-y-4">
                     <p className="text-sm text-slate-500 leading-relaxed">{office.addr}</p>
-                    <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
-                      <Phone size={14} className="text-blue-600" />
+                    <div className="flex items-center gap-2 text-sm font-bold text-[#000000]">
+                      <Phone size={14} className="text-[#1E559D]" />
                       {office.phone}
                     </div>
                   </div>
@@ -108,7 +108,7 @@ const OfficeDetails = () => {
             <motion.div 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="mt-12 bg-slate-900 rounded-[2rem] p-8 flex flex-col md:flex-row items-center justify-between gap-8"
+              className="mt-12 bg-[#000000] rounded-[2rem] p-8 flex flex-col md:flex-row items-center justify-between gap-8"
             >
               <div className="text-center md:text-left">
                 <h4 className="text-white font-bold text-lg">Digital Ecosystem</h4>
@@ -122,7 +122,7 @@ const OfficeDetails = () => {
                     whileHover={{ scale: 1.1, y: -4 }}
                     whileTap={{ scale: 0.9 }}
                     href="#"
-                    className="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300"
+                    className="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-[#1E559D] hover:border-[#1E559D] transition-all duration-300"
                   >
                     <Icon size={20} />
                   </motion.a>

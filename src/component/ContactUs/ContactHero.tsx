@@ -28,7 +28,7 @@ const ContactHero = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-sm uppercase tracking-widest text-blue-400 font-semibold mb-4"
+          className="text-sm uppercase tracking-widest text-[#1E559D] font-semibold mb-4"
         >
           Contact Us
         </motion.p>
@@ -40,8 +40,8 @@ const ContactHero = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-6xl font-black text-white leading-tight"
         >
-          Let’s Power Your <br />
-          <span className="text-blue-500">Next Project</span>
+          Let  Power Your <br />
+          <span className="text-[#1E559D]">Next Project</span>
         </motion.h1>
 
         {/* SUBTEXT */}
@@ -62,7 +62,7 @@ const ContactHero = () => {
           transition={{ delay: 0.5 }}
           className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition shadow-md">
+          <button className="px-6 py-3 bg-[#1E559D] hover:bg-[#153A7A] text-white font-semibold rounded-lg transition shadow-md">
             Get Consultation
           </button>
 

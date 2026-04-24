@@ -34,7 +34,7 @@ const ProductsHero = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl md:text-6xl font-black text-white"
           >
-            Our <span className="text-blue-500">Products</span>
+            Our <span className="text-[#1E559D]">Products</span>
           </motion.h1>
         </div>
 
@@ -53,7 +53,7 @@ const ProductsHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition"
+          className="mt-8 px-6 py-3 bg-[#1E559D] hover:bg-[#153A7A] text-white font-semibold rounded-lg transition"
         >
           Explore Products
         </motion.button>

@@ -43,19 +43,19 @@ const AboutSection = () => {
             <motion.div variants={fadeInUp} className="relative z-10">
               {/* SECTION TAG */}
               <div className="flex items-center gap-3 mb-4">
-                <span className="w-0.5 h-6 bg-blue-500"></span>
-                <span className="text-blue-600 font-semibold text-lg">Who we are</span>
+                <span className="w-0.5 h-6 bg-[#1E559D]"></span>
+                <span className="text-[#1E559D] font-semibold text-lg">Who we are</span>
               </div>
 
               {/* MAIN HEADING */}
-              <h3 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">
+              <h3 className="text-4xl md:text-5xl font-extrabold text-[#000000] mb-8 tracking-tight">
                 Driving Change As A Disruptor
               </h3>
 
               {/* BODY TEXT */}
               <div className="space-y-6 text-slate-700 leading-relaxed text-base md:text-lg">
                 <p>
-                  <span className="font-bold text-slate-900">Servotech Renewable Power System Ltd. (NSE: SERVOTECH)</span>, 
+                  <span className="font-bold text-[#000000]">Servotech Renewable Power System Ltd. (NSE: SERVOTECH)</span>, 
                   a leading Indian clean energy solutions provider, specializing in solar innovations and EV charging solutions. 
                   With a pan-India presence, agile manufacturing, and strong R&D capabilities, Servotech is driving India's 
                   transition toward a sustainable, energy-independent, and technologically empowered future.
@@ -95,10 +95,10 @@ const AboutSection = () => {
              <div className="p-8 text-center bg-white">
   <p className="text-xl font-medium">
     <span className="text-orange-500 font-bold">10+ Years Of</span>{" "}
-    <span className="font-extrabold text-slate-900">Solar Excellence</span>{" "}
+    <span className="font-extrabold text-[#000000]">Solar Excellence</span>{" "}
     <span className="text-slate-600">&</span>{" "}
     <span className="text-orange-500 font-bold italic">Sustainable</span>{" "}
-    <span className="font-extrabold text-slate-900">Energy Solutions</span>
+    <span className="font-extrabold text-[#000000]">Energy Solutions</span>
   </p>
 </div>
               {/* Subtle accent line on hover */}

@@ -28,7 +28,7 @@ const HeroHm = () => {
                 <div className="flex text-center font-serif  max-w-7xl mx-auto justify-between items-center  text-white text-sm">
 
                     <h1 className="text-4xl ">Powering The Future</h1>
-                    <button className="bg-yellow-500 hover:bg-blue-700 px-6 py-2 text-[18px] rounded-md transition"> Enquiry Now</button>
+                    <button className="bg-[#F9DCAB]-500 hover:bg-[#153A7A] px-6 py-2 text-[18px] rounded-md transition"> Enquiry Now</button>
                 </div>
             </div>
             <div className="max-w-7xl mx-auto px-6 py-16">
@@ -37,7 +37,7 @@ const HeroHm = () => {
                     {/* Left Side */}
                     <div className="md:w-1/4">
                         <h2 className="text-4xl text-center py-4 font-bold font-serif leading-tight">
-                            Solar <span className="text-blue-600">Reios</span>
+                            Solar <span className="text-[#1E559D]">Reios</span>
                         </h2>
                     </div>
 

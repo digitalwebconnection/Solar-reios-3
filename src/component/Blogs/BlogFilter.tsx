@@ -18,8 +18,8 @@ const BlogFilter = ({ categories, activeCategory, setActiveCategory }: BlogFilte
                    onClick={() => setActiveCategory(cat)}
                    className={`px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap ${
                      activeCategory === cat 
-                       ? "bg-blue-600 text-white shadow-lg" 
-                       : "bg-slate-50 text-slate-500 hover:text-blue-600 border border-slate-100"
+                       ? "bg-[#1E559D] text-white shadow-lg" 
+                       : "bg-slate-50 text-slate-500 hover:text-[#1E559D] border border-slate-100"
                    }`}
                  >
                    {cat}

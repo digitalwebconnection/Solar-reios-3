@@ -4,7 +4,7 @@ import { Sun, Leaf, Zap, ArrowRight } from "lucide-react";
 const SolarProductsSection = () => {
   const benefits = [
     {
-      icon: <Sun className="text-amber-500" size={28} />,
+      icon: <Sun className="text-[#F9DCAB]-500" size={28} />,
       title: "High Efficiency",
       desc: "Up to 22% conversion with advanced N-Type technology.",
       glow: "from-amber-200/40 to-transparent",
@@ -16,7 +16,7 @@ const SolarProductsSection = () => {
       glow: "from-emerald-200/40 to-transparent",
     },
     {
-      icon: <Zap className="text-blue-500" size={28} />,
+      icon: <Zap className="text-[#1E559D]" size={28} />,
       title: "Long Performance",
       desc: "Reliable output backed by 25+ years warranty.",
       glow: "from-blue-200/40 to-transparent",
@@ -26,16 +26,16 @@ const SolarProductsSection = () => {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
 
-      {/* 🔥 BACKGROUND GLOW + PARALLAX */}
+      {/* Ã°Å¸â€Â¥ BACKGROUND GLOW + PARALLAX */}
       <motion.div
         animate={{ y: [0, -30, 0] }}
         transition={{ duration: 10, repeat: Infinity }}
-        className="absolute top-[-10%] left-[-10%] w-[400px] h-[400px] bg-blue-100 rounded-full blur-[120px]"
+        className="absolute top-[-10%] left-[-10%] w-[400px] h-[400px] bg-[#1E559D]/20 rounded-full blur-[120px]"
       />
       <motion.div
         animate={{ y: [0, 30, 0] }}
         transition={{ duration: 12, repeat: Infinity }}
-        className="absolute bottom-[-10%] right-[-10%] w-[350px] h-[350px] bg-amber-100 rounded-full blur-[120px]"
+        className="absolute bottom-[-10%] right-[-10%] w-[350px] h-[350px] bg-[#F9DCAB]-100 rounded-full blur-[120px]"
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -46,13 +46,13 @@ const SolarProductsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest">
+          <p className="text-sm font-semibold text-[#1E559D] uppercase tracking-widest">
             Solar Energy
           </p>
 
           <h2 className="mt-3 text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
             Smart Solar for <br />
-            <span className="text-blue-600">Modern Energy Needs</span>
+            <span className="text-[#1E559D]">Modern Energy Needs</span>
           </h2>
 
           <p className="mt-4 text-gray-600">
@@ -61,7 +61,7 @@ const SolarProductsSection = () => {
           </p>
         </motion.div>
 
-        {/* 🔥 FLOATING CARDS */}
+        {/* Ã°Å¸â€Â¥ FLOATING CARDS */}
         <div className="mt-16 grid md:grid-cols-3 gap-8">
           {benefits.map((item, i) => (
             <motion.div
@@ -95,7 +95,7 @@ const SolarProductsSection = () => {
               {/* ARROW */}
               <motion.div
                 whileHover={{ x: 5 }}
-                className="mt-6 text-blue-600 flex items-center gap-1 text-sm font-medium relative z-10"
+                className="mt-6 text-[#1E559D] flex items-center gap-1 text-sm font-medium relative z-10"
               >
                 Learn more <ArrowRight size={16} />
               </motion.div>

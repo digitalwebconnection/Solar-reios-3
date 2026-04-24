@@ -4,29 +4,29 @@ import { ArrowRight, Zap, Sun, Battery, Car } from "lucide-react";
 const products = [
   {
     title: "Solar Inverter",
-    desc: "Maximize your energy yield with intelligent N-type conversion technology. Our inverters offer real-time monitoring and 98.9% peak efficiency for total control over your power ecosystem.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS85gF0TzRJZcj5wnDvMQzibo4uRd3Uu7-vNA&s",
-    icon: <Zap className="text-blue-500" />,
-    color: "blue"
+    desc: "Built for performance and reliability, Solar Reios inverters ensure maximum energy conversion with intelligent MPPT technology. Designed for commercial and industrial applications, they deliver stable output, real-time monitoring, and long-term operational efficiency.",
+    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800",
+    icon: <Zap className="text-[#1E559D]" />,
+    color: "[#1E559D]"
   },
   {
     title: "Solar Panels",
-    desc: "Engineered for high performance. Utilizing PERC technology and bifacial glass to capture sunlight from both sides, ensuring maximum power generation even on cloudy days.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDQRd6Oqwy63I19vNp0F-Qi0jYVZ9HbGtdSA&s",
-    icon: <Sun className="text-amber-500" />,
-    color: "amber"
+    desc: "Solar Reios high-efficiency panels are engineered using advanced cell technology to generate maximum power even in low-light conditions. Built for durability, they offer long lifespan, higher yield, and consistent performance across all environments.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPrWeGu4aue48crsLjuzTrXZUKTwt2kpxNWg&s",
+    icon: <Sun className="text-[#F9DCAB]-500" />,
+    color: "[#F9DCAB]"
   },
   {
-    title: "Solar Batteries",
-    desc: "Energy security that never sleeps. Our Lithium-ion storage solutions feature a smart BMS (Battery Management System) for safe, long-lasting backup during critical hours.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyTTXBXWh5Z3ibZuFxo4c5Etjem6J-G4geXg&s",
+    title: "Energy Storage Systems",
+    desc: "Ensure uninterrupted power with Solar Reios lithium-based energy storage solutions. Equipped with intelligent battery management systems, they provide safe, efficient, and scalable backup for residential, commercial, and industrial use.",
+    image: "https://images.unsplash.com/photo-1624397640148-949b1732bb0a?q=80&w=800",
     icon: <Battery className="text-emerald-500" />,
     color: "emerald"
   },
   {
-    title: "Solar Carport",
-    desc: "Transform your parking space into a power plant. Our structural solar carports provide vehicle protection while fueling your electric fleet with 100% clean energy.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlv5MCVrcXB6UGihuVHVe6zaYVOmi2l21WvQ&s",
+    title: "EV Charging Solutions",
+    desc: "Power the future of mobility with Solar Reios EV charging infrastructure. Our smart charging systems are designed for fast, reliable, and scalable deployment across commercial spaces, highways, and urban environments.",
+    image: "https://img.freepik.com/free-photo/ev-charging-station-clean-energy-filling-technology-electric-car-charging_35913-2573.jpg?semt=ais_hybrid&w=740&q=80",
     icon: <Car className="text-indigo-500" />,
     color: "indigo"
   },
@@ -42,16 +42,16 @@ const ProductShowcase = () => {
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-blue-600 font-bold tracking-[0.3em] text-xs uppercase"
+            className="text-[#1E559D] font-bold tracking-[0.3em] text-xs uppercase"
           >
             Product Ecosystem
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-black text-slate-900 mt-4"
+            className="text-5xl md:text-6xl font-black text-[#000000] mt-4"
           >
-            Precision <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-cyan-500">Engineering.</span>
+            Precision <span className="text-transparent bg-clip-text bg-linear-to-r from-[#1E559D] to-cyan-500">Engineering.</span>
           </motion.h2>
         </div>
 
@@ -70,13 +70,7 @@ const ProductShowcase = () => {
                 <div className="w-full md:w-1/2 relative group">
                   {/* Decorative Background Aura */}
                   <div className={`absolute inset-0 bg-${item.color}-200/30 blur-[100px] rounded-full scale-125 group-hover:scale-150 transition-transform duration-1000`} />
-                  
-                  {/* Watermark Number */}
-                  <span className="absolute -top-10 -left-10 text-[12rem] font-black text-slate-100 select-none z-0">
-                    0{index + 1}
-                  </span>
-
-                  <motion.div
+               <motion.div
                     initial={{ opacity: 0, scale: 0.8, x: isReverse ? 50 : -50 }}
                     whileInView={{ opacity: 1, scale: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -88,7 +82,7 @@ const ProductShowcase = () => {
                       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                       src={item.image}
                       alt={item.title}
-                      className="w-4/5 h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)] group-hover:drop-shadow-[0_30px_60px_rgba(37,99,235,0.2)] transition-all duration-500"
+                     className="w-full h-80 md:h-90 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)] group-hover:drop-shadow-[0_30px_60px_rgba(37,99,235,0.2)] transition-all duration-500"
                     />
                   </motion.div>
                 </div>
@@ -99,7 +93,7 @@ const ProductShowcase = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="w-full md:w-5/12 space-y-6"
+                  className="w-full md:w-8/12 space-y-6"
                 >
                   <div className="flex items-center gap-4">
                     <div className="p-3 bg-white shadow-xl rounded-2xl">
@@ -108,7 +102,7 @@ const ProductShowcase = () => {
                     <div className="h-px w-12 bg-slate-200" />
                   </div>
 
-                  <h3 className="text-4xl font-black text-slate-900 tracking-tight">
+                  <h3 className="text-4xl font-black text-[#000000] tracking-tight">
                     {item.title}
                   </h3>
 
@@ -120,7 +114,7 @@ const ProductShowcase = () => {
                     <motion.button 
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="group flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-blue-600 transition-colors shadow-lg shadow-slate-200"
+                      className="group flex items-center gap-3 px-8 py-4 bg-[#000000] text-white rounded-full font-bold hover:bg-[#1E559D] transition-colors shadow-lg shadow-slate-200"
                     >
                       View Specifications
                       <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />

@@ -19,8 +19,8 @@ const ProductFilter = ({ categories, activeCategory, setActiveCategory }: Produc
                 onClick={() => setActiveCategory(cat)}
                 className={`px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${
                   activeCategory === cat 
-                    ? "bg-blue-600 text-white shadow-lg" 
-                    : "text-slate-500 hover:text-blue-600"
+                    ? "bg-[#1E559D] text-white shadow-lg" 
+                    : "text-slate-500 hover:text-[#1E559D]"
                 }`}
               >
                 {cat}

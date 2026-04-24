@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 
-import abouthero from "../../assets/abouthero.png";
+
 
 
 const AboutHero = () => {
   return (
     <section className="relative h-120 flex items-center justify-center overflow-hidden">
       <img
-        src={abouthero}
-        className="absolute inset-0 w-full h-full"
+        src="https://visolindia.com/wp-content/uploads/2023/09/banner.jpg"
+        className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 text-center">
@@ -18,7 +18,7 @@ const AboutHero = () => {
           className="text-5xl md:text-7xl font-heading text-white font-bold leading-tight"
         >
           Powering a Greener<br />
-          <span className="text-blue-400">Future</span>
+          <span className="text-[#1E559D]">Future</span>
         </motion.h1>
       </div>
     </section>

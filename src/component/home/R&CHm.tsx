@@ -7,8 +7,8 @@ const RAndCHm = () => {
     <section className="relative bg-white py-4 overflow-hidden">
       {/* Background Decorative Element */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-40">
-        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-blue-50 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[10%] -right-[5%] w-[30%] h-[30%] bg-blue-50 rounded-full blur-3xl"></div>
+        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-[#1E559D]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-[10%] -right-[5%] w-[30%] h-[30%] bg-[#1E559D]/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -67,7 +67,7 @@ const RAndCHm = () => {
             
            
 
-            <button className="group flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-200">
+            <button className="group flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-xl hover:bg-[#153A7A] transition-all duration-300 shadow-lg hover:shadow-blue-200">
               Explore Residential
               <div className="w-6 h-px bg-white group-hover:w-8 transition-all"></div>
             </button>
@@ -112,7 +112,7 @@ const RAndCHm = () => {
 
           
 
-            <button className="group flex items-center gap-3 px-8 py-4 bg-blue-700 text-white rounded-xl hover:bg-gray-900 transition-all duration-300 shadow-lg shadow-blue-100">
+            <button className="group flex items-center gap-3 px-8 py-4 bg-[#153A7A] text-white rounded-xl hover:bg-gray-900 transition-all duration-300 shadow-lg shadow-blue-100">
               Commercial Solutions
               <div className="w-6 h-px bg-white group-hover:w-8 transition-all"></div>
             </button>

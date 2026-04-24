@@ -1,49 +1,113 @@
 import { motion } from "framer-motion";
-import { MapPin, Clock } from "lucide-react";
+import { Briefcase, MapPin, Clock, ArrowRight } from "lucide-react";
 
 const jobs = [
-  { title: "Solar Site Engineer", dept: "Operations", loc: "Delhi NCR", type: "Full-time" },
-  { title: "EV Sales Executive", dept: "Sales", loc: "Mumbai", type: "Full-time" },
-  { title: "Project Manager", dept: "EPC", loc: "Ahmedabad", type: "Full-time" },
-  { title: "Solar Design Engineer", dept: "Engineering", loc: "Remote/Delhi", type: "Full-time" },
+  {
+    title: "Solar Sales Executive",
+    location: "Ahmedabad",
+    type: "Full Time",
+    experience: "1-3 Years",
+  },
+  {
+    title: "Solar Design Engineer",
+    location: "Ahmedabad",
+    type: "Full Time",
+    experience: "2-5 Years",
+  },
+  {
+    title: "Site Installation Supervisor",
+    location: "Gujarat",
+    type: "Full Time",
+    experience: "3-6 Years",
+  },
+  {
+    title: "Electrical Engineer (Solar Projects)",
+    location: "Ahmedabad",
+    type: "Full Time",
+    experience: "2-4 Years",
+  },
+  {
+    title: "Solar Project Manager",
+    location: "Gujarat",
+    type: "Full Time",
+    experience: "5+ Years",
+  },
+  {
+    title: "Business Development Executive (Solar)",
+    location: "Remote / Field",
+    type: "Full Time",
+    experience: "1-4 Years",
+  },
 ];
-
-const JobBoard = () => {
+export default function CareersSection() {
   return (
-    <section className="py-24 max-w-7xl mx-auto px-4 md:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-heading font-black text-slate-900">Current Openings</h2>
-        <p className="text-slate-500 mt-4 font-medium uppercase tracking-widest text-xs">Join our growing tribe</p>
-      </div>
+    <section className=" py-16 px-6 lg:px-20">
+      <div className="max-w-6xl mx-auto">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Join Our Team 
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            WeÃ¢â‚¬â„¢re always looking for passionate people who want to grow, innovate,
+            and make an impact.
+          </p>
+        </motion.div>
 
-      <div className="grid gap-6">
-        {jobs.map((job, idx) => (
-          <motion.div 
-            key={idx}
-            whileHover={{ x: 10 }}
-            className="bg-white border border-slate-100 hover:border-blue-600 p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-8 group transition-all shadow-xl shadow-slate-200/40 hover:shadow-2xl"
-          >
-             <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
-                <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all capitalize shrink-0 font-black text-xl shadow-sm border border-slate-100">
-                  {job.title.charAt(0)}
+        {/* Job Cards */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {jobs.map((job, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 border border-gray-400"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-gray-800">
+                  {job.title}
+                </h3>
+                <Briefcase className="text-[#1E559D]" />
+              </div>
+
+              <div className="flex flex-wrap gap-4 text-gray-600 text-sm mb-6">
+                <div className="flex items-center gap-1">
+                  <MapPin size={16} /> {job.location}
                 </div>
-                <div>
-                  <h4 className="text-2xl font-bold font-heading text-slate-900 mb-2">{job.title}</h4>
-                  <div className="flex flex-wrap gap-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                    <span className="flex items-center gap-1.5"><MapPin size={14} className="text-blue-600" /> {job.loc}</span>
-                    <span className="flex items-center gap-1.5"><Clock size={14} className="text-blue-600" /> {job.type}</span>
-                    <span className="text-blue-600 tracking-tighter">{job.dept}</span>
-                  </div>
+                <div className="flex items-center gap-1">
+                  <Clock size={16} /> {job.type}
                 </div>
-             </div>
-             <button className="bg-slate-900 group-hover:bg-blue-600 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-lg whitespace-nowrap uppercase tracking-widest text-xs">
-               Apply Now
-             </button>
-          </motion.div>
-        ))}
+                <div>Experience: {job.experience}</div>
+              </div>
+
+              <button className="flex items-center gap-2 text-white bg-[#1E559D] hover:bg-[#153A7A] px-5 py-2 rounded-xl transition-all">
+                Apply Now <ArrowRight size={16} />
+              </button>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mt-12"
+        >
+          <p className="text-gray-700 mb-4">
+            DidnÃ¢â‚¬â„¢t find a suitable role?
+          </p>
+          <button className="bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition-all">
+            Send Your Resume
+          </button>
+        </motion.div>
       </div>
     </section>
   );
-};
-
-export default JobBoard;
+}

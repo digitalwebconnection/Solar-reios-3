@@ -48,7 +48,7 @@ const SolarCalculator: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen bg-[#F8FAFC] py-12 px-6 lg:py-20">
+    <section className="min-h-screen bg-[#1E559D]/5 py-12 px-6 lg:py-20">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
@@ -57,7 +57,7 @@ const SolarCalculator: React.FC = () => {
             <motion.div 
               initial={{ opacity: 0, x: -20 }} 
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-2 text-blue-600 font-bold tracking-wider uppercase text-sm mb-3"
+              className="flex items-center gap-2 text-[#1E559D] font-bold tracking-wider uppercase text-sm mb-3"
             >
               <Calculator size={18} />
               <span>Investment Planner</span>
@@ -65,7 +65,7 @@ const SolarCalculator: React.FC = () => {
             <motion.h1 
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-extrabold text-slate-900"
+              className="text-4xl md:text-5xl font-extrabold text-[#000000]"
             >
               Solar Savings Calculator
             </motion.h1>
@@ -100,10 +100,10 @@ const SolarCalculator: React.FC = () => {
             <div className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">
-                  Monthly Electricity Bill (₹)
+                  Monthly Electricity Bill (Ã¢â€šÂ¹)
                 </label>
                 <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">₹</span>
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">Ã¢â€šÂ¹</span>
                   <input
                     type="number"
                     value={bill}
@@ -116,7 +116,7 @@ const SolarCalculator: React.FC = () => {
 
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">
-                  Electricity Rate (₹ / Unit)
+                  Electricity Rate (Ã¢â€šÂ¹ / Unit)
                 </label>
                 <div className="relative">
                    <Zap size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -128,14 +128,14 @@ const SolarCalculator: React.FC = () => {
                   />
                 </div>
                 <div className="flex justify-between mt-2 px-1">
-                    <span className="text-[10px] text-slate-400 uppercase font-bold">Standard: ₹8</span>
-                    <span className="text-[10px] text-slate-400 uppercase font-bold">Commercial: ₹12+</span>
+                    <span className="text-[10px] text-slate-400 uppercase font-bold">Standard: Ã¢â€šÂ¹8</span>
+                    <span className="text-[10px] text-slate-400 uppercase font-bold">Commercial: Ã¢â€šÂ¹12+</span>
                 </div>
               </div>
 
               <div className="pt-4">
-                <div className="p-4 bg-blue-50 rounded-xl flex gap-3">
-                    <Info size={20} className="text-blue-600 shrink-0" />
+                <div className="p-4 bg-[#1E559D]/10 rounded-xl flex gap-3">
+                    <Info size={20} className="text-[#1E559D] shrink-0" />
                     <p className="text-xs text-blue-800 leading-relaxed">
                         Calculations are based on average sunlight hours in India (approx. 300 sunny days/year).
                     </p>
@@ -156,7 +156,7 @@ const SolarCalculator: React.FC = () => {
                   className="grid grid-cols-1 md:grid-cols-2 gap-6"
                 >
                   {/* Hero Result Card */}
-                  <div className="md:col-span-2 bg-linear-to-br from-blue-600 to-blue-800 rounded-3xl p-8 text-white shadow-lg shadow-blue-200 relative overflow-hidden">
+                  <div className="md:col-span-2 bg-linear-to-br from-[#1E559D] to-blue-800 rounded-3xl p-8 text-white shadow-lg shadow-blue-200 relative overflow-hidden">
                     <img src={saving} alt="Saving" className="absolute right-0 -top-5 text-white/10 w-64 h-64" />
                     <div className="relative z-10">
                         <p className="text-blue-100 font-medium mb-1 uppercase tracking-wider text-sm">Recommended System</p>
@@ -168,7 +168,7 @@ const SolarCalculator: React.FC = () => {
                             </div>
                             <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-lg border border-white/20">
                                 <p className="text-xs text-blue-100">Annual Savings</p>
-                                <p className="text-lg font-bold text-yellow-300">₹{(result.yearlySavings).toLocaleString()}</p>
+                                <p className="text-lg font-bold text-[#F9DCAB]-300">Ã¢â€šÂ¹{(result.yearlySavings).toLocaleString()}</p>
                             </div>
                         </div>
                     </div>
@@ -191,13 +191,13 @@ const SolarCalculator: React.FC = () => {
                   {/* Investment Card */}
                   <div className="bg-white p-3 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
                     <div>
-                        <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+                        <div className="w-12 h-12 bg-[#1E559D]/20 rounded-2xl flex items-center justify-center text-[#1E559D] mb-6">
                             <IndianRupee size={24} />
                         </div>
                         <h4 className="text-slate-500 font-semibold mb-1">Estimated Investment</h4>
-                        <p className="text-3xl font-bold text-slate-800">₹{result.estimatedCost.toLocaleString()}</p>
+                        <p className="text-3xl font-bold text-slate-800">Ã¢â€šÂ¹{result.estimatedCost.toLocaleString()}</p>
                     </div>
-                    <button className="mt-6 flex items-center justify-center gap-2 w-full py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-600 transition-colors group">
+                    <button className="mt-6 flex items-center justify-center gap-2 w-full py-4 bg-[#000000] text-white rounded-xl font-bold hover:bg-[#1E559D] transition-colors group">
                         Get Final Quote <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>

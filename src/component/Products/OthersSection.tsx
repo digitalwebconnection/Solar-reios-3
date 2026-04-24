@@ -24,14 +24,14 @@ const OthersSection = () => {
     <section className="py-24 bg-white relative overflow-hidden">
 
       {/* SOFT BACKGROUND DESIGN */}
-      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-blue-100 blur-[120px] rounded-full" />
+      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-[#1E559D]/20 blur-[120px] rounded-full" />
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-green-100 blur-[120px] rounded-full" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
 
         {/* HEADER */}
         <div className="text-center mb-16">
-          <p className="text-sm text-blue-600 font-semibold uppercase tracking-widest">
+          <p className="text-sm text-[#1E559D] font-semibold uppercase tracking-widest">
             Complete Ecosystem
           </p>
 
@@ -40,7 +40,7 @@ const OthersSection = () => {
           </h2>
 
           <p className="text-gray-600 mt-4 max-w-xl mx-auto">
-            We provide everything you need to build, manage, and optimize your energy solutions — all in one place.
+            We provide everything you need to build, manage, and optimize your energy solutions Ã¢â‚¬â€ all in one place.
           </p>
         </div>
 
@@ -58,10 +58,10 @@ const OthersSection = () => {
             >
 
               {/* HOVER BACKGROUND */}
-              <div className="absolute inset-0 bg-blue-50 opacity-0 group-hover:opacity-100 transition" />
+              <div className="absolute inset-0 bg-[#1E559D]/10 opacity-0 group-hover:opacity-100 transition" />
 
               {/* ICON */}
-              <div className="relative z-10 w-12 h-12 flex items-center justify-center rounded-xl bg-blue-600 text-white mb-5 group-hover:scale-110 transition">
+              <div className="relative z-10 w-12 h-12 flex items-center justify-center rounded-xl bg-[#1E559D] text-white mb-5 group-hover:scale-110 transition">
                 {item.icon}
               </div>
 
@@ -77,7 +77,7 @@ const OthersSection = () => {
               </div>
 
               {/* BOTTOM LINE */}
-              <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-blue-600 group-hover:w-full transition-all duration-300" />
+              <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#1E559D] group-hover:w-full transition-all duration-300" />
             </motion.div>
           ))}
 

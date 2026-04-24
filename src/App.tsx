@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 import "./App.css";
 
 // Layout & Home
@@ -12,31 +11,20 @@ import AboutUsMain from "./component/AboutUs/AboutUsMain";
 // Products
 import ProductsMain from "./component/Products/ProductsMain";
 
-// Solutions - Solar EPC
-import SolarEPCHero from "./component/Solutions/SolarEPC/SolarEPCHero";
-import EPCServices from "./component/Solutions/SolarEPC/EPCServices";
-import EPCProcess from "./component/Solutions/SolarEPC/EPCProcess";
-import ProjectTypes from "./component/Solutions/SolarEPC/ProjectTypes";
+// Solutions - Main Files
+import SolarEPCMain from "./component/Solutions/SolarEPC/SolarEPCMain";
+import SolarCalculatorMain from "./component/Solutions/SolarCalculator/SolarCalculatorMain";
+import EVCalculatorMain from "./component/Solutions/EVCalculator/EVCalculatorMain";
 
-// Solutions - Calculators
-import SolarCalculator from "./component/home/SolarCalculator";
-import EVHero from "./component/Solutions/EVCalculator/EVHero";
-import EVCalcLayout from "./component/Solutions/EVCalculator/EVCalcLayout";
+// Careers - Main File
+import CareersMain from "./component/Careers/CareersMain";
 
-// Careers
-import CareersHero from "./component/Careers/CareersHero";
-import LifeAtCompany from "./component/Careers/LifeAtCompany";
-import BenefitsSection from "./component/Careers/BenefitsSection";
-import JobBoard from "./component/Careers/JobBoard";
-import AppForm from "./component/Careers/AppForm";
-
-// Blogs
-import BlogHero from "./component/Blogs/BlogHero";
-import BlogFilter from "./component/Blogs/BlogFilter";
-import BlogGrid from "./component/Blogs/BlogGrid";
+// Blogs - Main File
+import BlogsMain from "./component/Blogs/BlogsMain";
 
 // Contact Us
 import ContactUsMain from "./component/ContactUs/ContactUsMain";
+import WhatsAppChatbot from "./component/WhatsAppChatbot";
 
 // --- Local Page Aggregators ---
 
@@ -54,46 +42,33 @@ const Products = () => (
 
 const SolarEPC = () => (
   <>
-    <SolarEPCHero />
-    <EPCServices />
-    <EPCProcess />
-    <ProjectTypes />
+    <SolarEPCMain />
+  </>
+);
+
+const SolarCalculator = () => (
+  <>
+    <SolarCalculatorMain />
   </>
 );
 
 const EVCalculator = () => (
   <>
-    <EVHero />
-    <EVCalcLayout />
+    <EVCalculatorMain />
   </>
 );
 
 const Careers = () => (
   <>
-    <CareersHero />
-    <LifeAtCompany />
-    <BenefitsSection />
-    <JobBoard />
-    <AppForm />
+    <CareersMain />
   </>
 );
 
-const Blogs = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const categories = ["All", "Solar", "Energy", "Tech", "News"];
-
-  return (
-    <>
-      <BlogHero />
-      <BlogFilter 
-        categories={categories}
-        activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
-      />
-      <BlogGrid posts={[]} setActiveCategory={setActiveCategory} />
-    </>
-  );
-};
+const Blogs = () => (
+  <>
+    <BlogsMain />
+  </>
+);
 
 const ContactUs = () => (
   <>
@@ -117,6 +92,7 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </Layout>
+      <WhatsAppChatbot />
     </Router>
   );
 }

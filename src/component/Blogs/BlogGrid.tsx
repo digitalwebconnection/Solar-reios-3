@@ -14,74 +14,172 @@ interface Post {
 }
 
 interface BlogGridProps {
-  posts: Post[];
+  posts?: Post[];
   setActiveCategory: (cat: string) => void;
 }
 
-const BlogGrid = ({ posts, setActiveCategory }: BlogGridProps) => {
+/* Ã¢Å“â€¦ Default Blog Data (Solar Focused) */
+const samplePosts: Post[] = [
+  {
+    id: 1,
+    title: "How Solar Can Reduce Your Electricity Bill by 90%",
+    category: "Solar",
+    date: "April 10, 2026",
+    readTime: "5 min read",
+    excerpt: "Switching to solar can drastically cut electricity costs and give long-term savings.",
+    img: "https://images.unsplash.com/photo-1509391366360-2e959784a276",
+    author: "Admin",
+  },
+  {
+    id: 2,
+    title: "Net Metering Explained: Earn From Your Solar Power",
+    category: "Policy",
+    date: "April 5, 2026",
+    readTime: "6 min read",
+    excerpt: "Understand how net metering works and earn credits from excess solar energy.",
+    img: "https://images.unsplash.com/photo-1584277261846-c6a1672ed979",
+    author: "Energy Expert",
+  },
+  {
+    id: 3,
+    title: "Commercial Solar Installation ROI Guide",
+    category: "Business",
+    date: "March 28, 2026",
+    readTime: "7 min read",
+    excerpt: "Businesses are saving lakhs every year using solar systems.",
+    img: "https://images.unsplash.com/photo-1592833159155-c62df1b65634",
+    author: "Solar Team",
+  },
+  {
+    id: 4,
+    title: "Top Government Subsidies for Solar in India",
+    category: "Subsidy",
+    date: "March 20, 2026",
+    readTime: "4 min read",
+    excerpt: "Explore all solar subsidies and how to claim maximum benefits.",
+    img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d",
+    author: "Policy Advisor",
+  },
+  {
+    id: 5,
+    title: "Is Solar Worth It for Homes in 2026?",
+    category: "Guide",
+    date: "March 15, 2026",
+    readTime: "5 min read",
+    excerpt: "Everything homeowners should know before installing solar.",
+    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    author: "Consultant",
+  },
+  {
+    id: 6,
+    title: "Solar vs Electricity: Cost Comparison",
+    category: "Comparison",
+    date: "March 10, 2026",
+    readTime: "6 min read",
+    excerpt: "Compare long-term savings between solar and traditional electricity.",
+    img: "https://cpimg.tistatic.com/08851117/b/4/SOLAR-PANEL-PROVIDER-COMPANY-IN-JAIPUR.png",
+    author: "Analyst",
+  },
+];
+
+const BlogGrid = ({ posts = [], setActiveCategory }: BlogGridProps) => {
+  const displayPosts = posts.length ? posts : samplePosts;
+
   return (
     <section className="py-24 max-w-7xl mx-auto px-4 md:px-8">
+      
+      {/* Ã°Å¸â€Â¥ Heading */}
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-black text-[#000000] mb-4">
+          Latest <span className="text-[#1E559D]">Solar Insights</span>
+        </h2>
+        <p className="text-slate-500 max-w-2xl mx-auto">
+          Explore expert articles on solar energy, savings, government policies, and smart decisions.
+        </p>
+      </div>
+
+      {/* Ã°Å¸â€Â¥ Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         <AnimatePresence mode="popLayout">
-          {posts.map((post) => (
-            <motion.article 
+          {displayPosts.map((post) => (
+            <motion.article
               layout
               key={post.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="group flex flex-col bg-white rounded-[40px] overflow-hidden border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl transition-all hover:border-blue-600/30"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 40 }}
+              transition={{ duration: 0.4 }}
+              className="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all hover:border-[#1E559D]/30"
             >
-              <div className="h-64 relative overflow-hidden">
-                <img 
-                  src={post.img} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                  alt={post.title} 
+              {/* Image */}
+              <div className="h-60 relative overflow-hidden">
+                <img
+                  src={post.img}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt={post.title}
                 />
-                <div className="absolute top-6 left-6">
-                  <span className="bg-white/90 backdrop-blur-md text-slate-900 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
+                <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
+
+                {/* Category */}
+                <div className="absolute top-4 left-4">
+                  <span className="bg-white/90 text-[#000000] px-3 py-1 rounded-full text-xs font-bold">
                     {post.category}
                   </span>
                 </div>
               </div>
 
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="flex items-center gap-4 text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6 border-b border-slate-50 pb-4">
-                  <span className="flex items-center gap-1.5"><Calendar size={12} className="text-blue-600" /> {post.date}</span>
-                  <span className="flex items-center gap-1.5"><Clock size={12} className="text-orange-400" /> {post.readTime}</span>
-                </div>
+              {/* Content */}
+              <div className="p-6 flex flex-col grow">
                 
-                <h3 className="text-xl font-heading font-black text-slate-900 mb-4 group-hover:text-blue-600 transition-colors leading-tight">
+                {/* Meta */}
+                <div className="flex items-center gap-4 text-xs text-slate-400 mb-4">
+                  <span className="flex items-center gap-1">
+                    <Calendar size={14} /> {post.date}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Clock size={14} /> {post.readTime}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-lg font-bold text-[#000000] mb-3 group-hover:text-[#1E559D] transition">
                   {post.title}
                 </h3>
-                
-                <p className="text-slate-500 text-sm mb-8 line-clamp-3 leading-relaxed font-medium">
+
+                {/* Excerpt */}
+                <p className="text-slate-500 text-sm mb-6 line-clamp-3">
                   {post.excerpt}
                 </p>
-                
-                <div className="mt-auto pt-6 flex items-center justify-between border-t border-slate-50">
-                   <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 overflow-hidden border border-slate-200 shadow-inner">
-                         <User size={16} />
-                      </div>
-                      <span className="text-xs font-black text-slate-900 uppercase tracking-tight">{post.author}</span>
-                   </div>
-                   <Link to="/blogs" className="text-blue-600 font-black text-[10px] uppercase tracking-widest flex items-center gap-1 hover:gap-3 transition-all">
-                     Read More <ArrowRight size={14} />
-                   </Link>
+
+                {/* Footer */}
+                <div className="mt-auto flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-sm">
+                    <User size={16} className="text-slate-400" />
+                    <span className="text-slate-700 font-medium">{post.author}</span>
+                  </div>
+
+                  <Link
+                    to={`/blog/${post.id}`}
+                    className="flex items-center gap-1 text-[#1E559D] text-sm font-semibold hover:gap-2 transition-all"
+                  >
+                    Read More <ArrowRight size={16} />
+                  </Link>
                 </div>
               </div>
             </motion.article>
           ))}
         </AnimatePresence>
       </div>
-      
-      {posts.length === 0 && (
+
+      {/* Empty State */}
+      {displayPosts.length === 0 && (
         <div className="text-center py-20 bg-slate-50 rounded-[40px] border-2 border-dashed border-slate-200">
-          <h3 className="text-2xl font-black text-slate-900">No articles found.</h3>
-          <button 
+          <h3 className="text-2xl font-black text-[#000000]">
+            No articles found.
+          </h3>
+          <button
             onClick={() => setActiveCategory("All")}
-            className="mt-6 text-blue-600 font-bold underline"
+            className="mt-6 text-[#1E559D] font-bold underline"
           >
             View All Posts
           </button>
@@ -91,4 +189,4 @@ const BlogGrid = ({ posts, setActiveCategory }: BlogGridProps) => {
   );
 };
 
-export default BlogGrid;
+export default BlogGrid;  

@@ -3,34 +3,34 @@ import { useRef } from "react";
 
 const milestones = [
   {
-    year: "2004",
-    title: "Company Founded",
-    desc: "Entered the industry with Sine-Wave inverters.",
-    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216",
+    year: "2015",
+    title: "Entering Solar Distribution",
+    desc: "Started as a trusted distributor of high-quality solar panels, inverters, and electrical components across industrial and commercial segments.",
+    image: "https://apnsolar.com/wp-content/uploads/2025/03/solar-distributorship.png",
   },
   {
-    year: "2010",
-    title: "Product Expansion",
-    desc: "Launched LED lighting and solar solutions.",
-    image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231",
-  },
-  {
-    year: "2017",
-    title: "Stock Market Listing",
-    desc: "Listed on NSE — major milestone.",
-    image: "https://images.unsplash.com/photo-1569025743873-ea3a9ade89f9",
+    year: "2018",
+    title: "Expanding Product Portfolio",
+    desc: "Partnered with leading brands to supply complete solar solutions including panels, inverters, cables, and protection systems.",
+    image: "https://news-images.dhan.co/insolation-energy-s-subsidiary-expands-solar-power-portfolio-with-new-spvs.jpg",
   },
   {
     year: "2020",
-    title: "COVID Response",
-    desc: "Supplied oxygen & UV products nationwide.",
-    image: "https://images.unsplash.com/photo-1584515933487-779824d29309",
+    title: "EPC Project Execution",
+    desc: "Stepped into turnkey solar EPC projects delivering efficient rooftop and ground-mounted installations for businesses.",
+    image: "https://usolar.in/wp-content/uploads/2024/03/7-4-1024x640.webp",
   },
   {
-    year: "Present",
-    title: "Future Ready",
-    desc: "Innovating solar & EV charging.",
-    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d",
+    year: "2022",
+    title: "Scaling Industrial Solar",
+    desc: "Successfully executed multiple MW-scale solar installations helping industries reduce energy costs and improve sustainability.",
+    image: "https://www.novergysolar.com/wp-content/uploads/2020/08/1.jpg.webp",
+  },
+  {
+    year: "Today",
+    title: "Future-Ready Energy Solutions",
+    desc: "Driving innovation in solar, energy storage, and EV infrastructure to power businesses with smarter, greener energy.",
+    image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1200",
   },
 ];
 
@@ -49,12 +49,12 @@ const MilestoneTimeline = () => {
 
   return (
     <section className="py-24 bg-linear-to-b from-white via-slate-50 to-white" ref={containerRef}>
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 ">
 
         {/* HEADER */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900">
-            Our <span className="text-blue-600">Journey</span>
+          <h2 className="text-4xl md:text-5xl font-black text-[#000000]">
+            Our <span className="text-[#1E559D]">Journey</span>
           </h2>
           <p className="text-slate-500 mt-4">
             From humble beginnings to industry leadership
@@ -69,7 +69,7 @@ const MilestoneTimeline = () => {
           {/* PROGRESS LINE */}
           <motion.div
             style={{ scaleY }}
-            className="absolute left-1/2 -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-600 to-blue-400 origin-top hidden md:block"
+            className="absolute left-1/2 -translate-x-1/2 w-1 h-full bg-linear-to-b from-[#1E559D] to-[#1E559D] origin-top hidden md:block"
           />
 
           <div className="space-y-5">
@@ -80,7 +80,7 @@ const MilestoneTimeline = () => {
                 <div key={index} className="flex flex-col md:flex-row items-center relative">
 
                   {/* DOT */}
-                  <div className="absolute left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-600 border-4 border-white shadow-lg z-20" />
+                  <div className="absolute left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-[#1E559D] border-4 border-white shadow-lg z-20" />
 
                   <div className={`flex w-full items-center ${isEven ? "md:flex-row-reverse" : ""}`}>
                     
@@ -93,20 +93,20 @@ const MilestoneTimeline = () => {
                       transition={{ duration: 0.7 }}
                       className="w-full md:w-1/2 px-6"
                     >
-                      <div className="group relative rounded-3xl overflow-hidden shadow-lg">
+                      <div className="group relative rounded-xl overflow-hidden shadow-lg">
 
                         {/* IMAGE */}
                         <img
                           src={item.image}
-                          className="w-full h-44 object-cover transition duration-700 group-hover:scale-110"
+                          className="w-full h-64 object-cover transition duration-700 group-hover:scale-110"
                         />
 
                         {/* GRADIENT OVERLAY */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
 
                         {/* CONTENT */}
                         <div className="absolute bottom-0 p-6 text-white">
-                          <span className="text-sm font-bold bg-blue-600 px-3 py-1 rounded-full">
+                          <span className="text-sm font-bold bg-[#1E559D] px-3 py-1 rounded-full">
                             {item.year}
                           </span>
 
@@ -120,7 +120,7 @@ const MilestoneTimeline = () => {
                         </div>
 
                         {/* HOVER GLOW */}
-                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-500 rounded-3xl transition-all duration-300" />
+                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-500 rounded-xl transition-all duration-300" />
                       </div>
                     </motion.div>
 

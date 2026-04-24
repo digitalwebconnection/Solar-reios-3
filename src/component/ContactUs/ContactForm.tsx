@@ -13,12 +13,12 @@ const ContactForm = () => {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
           >
-            <p className="text-sm text-blue-600 font-semibold uppercase tracking-widest">
+            <p className="text-sm text-[#1E559D] font-semibold uppercase tracking-widest">
               Contact Us
             </p>
 
             <h2 className="text-4xl font-bold text-gray-900 mt-4 leading-tight">
-              Let’s Build Your <br /> Energy Solution
+              Let  Build Your <br /> Energy Solution
             </h2>
 
             <p className="text-gray-600 mt-6 max-w-md">
@@ -27,9 +27,9 @@ const ContactForm = () => {
             </p>
 
             <div className="mt-8 text-sm text-gray-500">
-              ✔ Quick response within 24 hours <br />
-              ✔ Expert consultation <br />
-              ✔ Customized solutions
+              Ã¢Å“â€ Quick response within 24 hours <br />
+              Ã¢Å“â€ Expert consultation <br />
+              Ã¢Å“â€ Customized solutions
             </div>
           </motion.div>
 
@@ -75,7 +75,7 @@ const ContactForm = () => {
               required
             />
 
-            <button className="w-full bg-blue-600 text-white py-3 rounded-md font-semibold flex items-center justify-center gap-2 hover:bg-blue-700 transition">
+            <button className="w-full bg-[#1E559D] text-white py-3 rounded-md font-semibold flex items-center justify-center gap-2 hover:bg-[#153A7A] transition">
               Submit Message <Send size={16} />
             </button>
 
